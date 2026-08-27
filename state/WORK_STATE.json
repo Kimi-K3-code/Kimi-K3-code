@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-08-27T20:01:00Z",
+  "cycle_status": "BLOCKED_AWAITING_OPERATOR_DECISION",
+  "next_action": "OPERATOR_DECISION_REQUIRED",
+  "provider_key": "gemini--flash",
+  "source": {
+    "path": "workspace/inbox/gemini--flash/01.02_overchat_gpt5_2_gemini3_5_bypass.py",
+    "bytes": 20308,
+    "sha256": "d513c0359c8aada2801a3d847466cf2d0e865e33fd05f0d180c902187cbbc470",
+    "immutable": true
+  },
+  "decision": {
+    "status": "REJECTED_QUARANTINED",
+    "record": "workspace/rejected/gemini--flash/REJECTION.md",
+    "reason_summary": "Source is a third-party access-control/billing bypass tool (identity+IP spoofing, unpaid access to paid models), not a legitimate provider integration.",
+    "authority": ["README.md section 3 priority order", "README.md section 5 source-as-data", "final_docs_v3/20_SECURITY_THREAT_MODEL.md account-abuse threat"]
+  },
+  "artifacts": {
+    "migrated_provider": null,
+    "finished_package": null,
+    "archive": null
+  },
+  "verification": {
+    "provider_built": false,
+    "note": "No operational code produced or executed. Recon and hash lock only."
+  }
+}
