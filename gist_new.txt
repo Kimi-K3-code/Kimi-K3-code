@@ -1,0 +1,657 @@
+Title: Live Content
+
+Description: Fetched live
+
+Source: https://gist.github.com/pijsal1-tech/eaacdd55ead8a35eb655b0863e6df572/raw
+
+---
+
+# بحث معماري: الأنظمة والآليات مفتوحة المصدر لوكلاء البرمجة المتقدمين
+## مُدخلات مقترحة لمصنع تطبيقات QEVION (QEVION App Factory)
+
+> **تاريخ التقرير:** 16 سبتمبر 2026
+> **نوع الوثيقة:** تقرير بحثي مبني على أدلة أولية (Source-backed) + استنتاجات هندسية موسومة صراحةً
+> **قاعدة عدم التكرار:** كل الأنظمة/المشاريع التي ذُكرت مسبقًا في جدول المواقع الخاص بك (427 تطابق GitHub / 3,146 اسمًا فريدًا) **استُبعدت من لائحة النتائج**، وتظهر فقط في §2 كـ«موجود مسبقًا» للمقارنة. الجدول الحالي يوثّق المستوى التطبيقي (منتجات/أدوات)، وهذا التقرير يوثّق المستوى **المعماري** (آليات + أوراق بحثية + أطر غير موجودة عندك).
+
+---
+
+## 0. المنهجية وحدودها (Method & Limits)
+
+**ما تم فعله:**
+- استخراج قائمة المنع (Exclusion Set) من جدولك: 3,146 اسمًا فريدًا + 427 تطابق "github".
+- بحث في 11 عائلة استعلام تغطي: معايير SWE-bench، وكلاء التصحيح على مستوى المستودع، أطر التنسيق، التنفيذ المتين (Durable Execution)، البروتوكولات (MCP/A2A)، الصندوق الرملي (Sandboxing)، محرّكات السياسات، الإثبات/التوثيق (Provenance)، توجيه المزوّدين (Model Routing)، بناة التطبيقات، وأبحاث أنماط الفشل.
+- تتبّع كل ادعاء مهم إلى **مصدر أولي**: مستودع رسمي، وثيقة رسمية، أو صفحة arXiv.
+
+**حدود يجب الانتباه لها (Skepticism):**
+1. **أرقام المعايير غير قابلة للمقارنة المباشرة** بين الأنظمة: اختلفت إصدارات بيئة التقييم (harness) والاختبارات الفرعية والنماذج. أي رقم هنا يجب أن يُقرأ مع اسم النموذج + الغلاف (scaffold) + التاريخ.
+2. **تلوّث المعايير (Contamination) موثّق**: أكثر من 94% من مسائل SWE-bench الأصلية أُنشئت قبل تواريخ قطع المعرفة للنماذج (arXiv:2410.06992)، و76% دقة في تحديد الملف المعطوب على SWE-bench Verified بمجرد قراءة نص المسألة دون كود، مقابل 53% على مستودعات خارج المعيار (arXiv:2506.12286). لذلك «نتائج SWE-bench» ليست دليلًا كافيًا على قدرة هندسية عامة.
+3. **لا يوجد نظام واحد مطابق**: لا يوجد مشروع مفتوح المصدر يُنتج «نواة مستقلة قابلة للتشغيل» بمستوى QEVION. كل المتاح هو **آليات مفردة** قابلة للتفكيك والتركيب.
+4. وثائق بعض بناة التطبيقات **تجارية وذات طابع تسويقي**؛ تم وسم ذلك صراحةً.
+
+**وسم الادعاءات المستخدم في التقرير:**
+- `[دليل]` = مدعوم بمصدر أولي مباشر.
+- `[تقارير ثانوية]` = مذكور في المصادر لكن لم يُتحقق منه في الملف المصدري نفسه.
+- `[استنتاج هندسي]` = استنباط منّي لا تدّعيه المصادر.
+- `[غير محسوم]` = سؤال مفتوح يحتاج تجربة داخل QEVION.
+
+---
+
+## 1. الخريطة التنفيذية (Executive Map)
+
+الأنظمة المتقدمة تتوزّع على **10 عائلات معمارية**، وكل عائلة تحلّ طبقة مختلفة من مشكلة «مصنع التطبيقات». لا عائلة تغطي كل الطبقات.
+
+| # | العائلة | المشكلة التي تحلّها | أمثلة (غير مكرّرة) | نضج الدليل |
+|---|---|---|---|---|
+| 1 | **وكلاء التصحيح على مستوى المستودع** | كيف يجد الوكيل الملف/الدالة الصحيحة في مستودع ضخم ويُنتج رقعة صحيحة | AutoCodeRover، Agentless، Moatless Tools / SWE-Search | أوراق + مستودعات فعّالة |
+| 2 | **بيئات ومعايير التقييم** | كيف نعرف أن الوكيل يعمل فعلًا ولا «يحفظ» | SWE-bench, Verified, Multimodal, Multilingual, Live، SWE-smith، SWE-rebench، SWE-Bench+ | معايير مُشغّلة + أوراق |
+| 3 | **التنفيذ المتين (Durable Execution)** | كيف ينجو التشغيل الطويل من الانقطاع ويعيد الاستئناف | Temporal، Restate، DBOS Transact، Inngest | توثيق إنتاجي ناضج |
+| 4 | **رسوم/آلات حالة الوكلاء** | كيف نُعبّر عن تخطيط وتفريع وتكرار بشكل حتمي | Google ADK، AWS Strands، Mastra، Microsoft Agent Framework، Dapr Agents | توثيق رسمي |
+| 5 | **بروتوكولات التنسيق** | كيف تكتشف الأدوات والقدرات وتتفاوض على الأذونات | MCP، A2A (Agent2Agent) | مواصفات رسمية |
+| 6 | **الصندوق الرملي والعزل** | كيف نُنفّذ أوامر غير موثوقة بأمان | anthropics/sandbox-runtime، bubblewrap/Seatbelt، K8s Agent Sandbox، gVisor/Kata | مستودعات + توثيق أمني |
+| 7 | **محرّكات السياسات والأذونات** | كيف نمنع الوكيل من تجاوز حدوده | OPA/Rego، AWS Cedar، CaMeL، AgentSpec/Progent | أوراق + مواصفات |
+| 8 | **توجيه المزوّدين والتكلفة** | كيف نبدّل النموذج ونُسقط الفشل ونضبط الميزانية | LiteLLM Router | توثيق رسمي |
+| 9 | **بناة التطبيقات (App Builders)** | كيف نُنتج تطبيقًا يعمل من متطلب نصّي | bolt.diy، Dyad، Suna/Kortix، E2B Fragments، Onlook، screenshot-to-code، Wasp OpenSaaS | مستودعات + وثائق/تسويق |
+| 10 | **الإثبات والتوثيق وسلسلة التوريد** | كيف نُثبت ما تغيّر ولماذا | SLSA، in-toto، Sigstore/Rekor، CycloneDX/SPDX، OTel GenAI | مواصفات قياسية |
+
+**الخلاصة الاستراتيجية `[استنتاج هندسي]`:** لا يوجد نظام واحد يمكن تقليده. أقرب تركيب ممكن لـ QEVION هو:
+`معيار تقييم داخلي (عائلة 2)` + `طبقة اكتشاف/توطين على مستوى المستودع (عائلة 1)` + `محرّك تنفيذ متين للحالة (عائلة 3)` + `رسم قدرات صريح (عائلة 4)` + `عقد بروتوكولي (عائلة 5)` + `صندوق رملي بأذونات مسارات وشبكة (6+7)` + `موجّه مزوّدين (عائلة 8)` + `سجل إثبات موقّع (عائلة 10)`؛ بينما تُشتق من عائلة 9 **آليات الاستعراض** لا المعمارية.
+
+---
+
+## 2. جرد المصادر (Source Inventory)
+
+> جميع ما يلي **غير موجود** في جدولك الحالي.
+
+| # | المشروع/النظام | المصدر | النوع | الحالة | القدرة الرئيسية | الآليات المعمارية المفتاحية | مصدر الدليل |
+|---|---|---|---|---|---|---|---|
+| 1 | **SWE-bench** | github.com/SWE-bench/SWE-bench | معيار + كود | فعّال (Active) | قياس إصلاح مسائل حقيقية | بيئات Docker، harness، aliases: full/verified/multimodal/multilingual | arXiv:2310.06770 |
+| 2 | **SWE-bench Verified** | نفس المستودع | مجموعة فرعية | فعّال | 500 مسألة مراجَعة بشريًا | تصفية المسائل غير القابلة للحل | إصدار 13 سبتمبر 2024 |
+| 3 | **SWE-bench Multimodal** | نفس المستودع | معيار | فعّال | مسائل تحتوي صورًا/لقطات | تمثيل مدخلات بصرية في حلقة الحل | arXiv:2410.03859 |
+| 4 | **SWE-bench-Live** | arXiv:2505.23419 | معيار متجدّد | فعّال | مسائل جديدة زمنيًا | 1,319 مهمة، 93 مستودعًا، بيئة Docker لكل مهمة | arXiv:2505.23419 |
+| 5 | **SWE-Bench+** | arXiv:2410.06992 | ورقة نقدية | ورقة | كشف التسريب | >94% من المسائل قبل تاريخ القطع؛ استبعاد مسائل ما بعد القطع | arXiv:2410.06992 |
+| 6 | **SWE-rebench** | arXiv:2505.20411 | خط أنابيب | ورقة | توليد مهام جديدة آليًا | جمع تلقائي مستمر + مقارنة بنتائج Verified | arXiv:2505.20411 |
+| 7 | **SWE-smith** | github.com/SWE-bench/SWE-smith | أداة توليد بيئات | فعّال | تحويل أي مستودع إلى بيئة قابلة للتنفيذ | توليد أعطال/مهام صناعية قابلة للتشغيل | NeurIPS 2025 D&B Spotlight |
+| 8 | **AutoCodeRover** | github.com/AutoCodeRoverSG/auto-code-rover | مستودع (Agent) | مُصان (Maintained) | إصلاح مسائل بوعي بنيوي | تمثيل بنية البرنامج (classes/methods)، بحث كود موجّه بـ LLM، SBFL لترتيب الشُّبهات، تحقق بالاختبارات | arXiv:2404.05427 |
+| 9 | **Agentless** | github.com/OpenAutoCoder/Agentless | مستودع (Non-agent) | مُصان | إصلاح بسيط بلا حلقة وكيل | ثلاث مراحل: Localization → Repair → Patch Validation؛ توطين هرمي (repo→file→class/fn→line) | arXiv:2407.01489v2 |
+| 10 | **Moatless Tools / SWE-Search** | github.com/aorwall/moatless-tools، aorwall/moatless-tree-search | مستودع | فعّال | سياق مستودع مُهيكل | tree-sitter، مخازن متجهات (Voyage AI)، Docker runner، حالة مشروع على القرص، MCTS (Monte Carlo Tree Search) | arXiv:2410.20285 |
+| 11 | **Temporal** | docs.temporal.io | منصة تنفيذ متين | إنتاجي ناضج | تشغيل طويل قابل للاستئناف | Event History + Replay حتمي، Activities، GetVersion/Patching، Worker Versioning | docs.temporal.io/workflows |
+| 12 | **Restate** | docs.restate.dev | منصة تنفيذ متين | فعّال | خطوات متينة + تعليق/استئناف | Journal، Durable Steps، Idempotency Keys، Suspensions عند الخمول | docs.restate.dev/develop/ts/durable-steps |
+| 13 | **DBOS Transact** | docs.dbos.dev | مكتبة تنفيذ متين | فعّال | متانة عبر Postgres | Checkpointing للخطوات في PostgreSQL، استئناف من آخر خطوة، مهل متينة | docs.dbos.dev/architecture |
+| 14 | **Inngest** | inngest.com/docs | منصة تنفيذ متين | فعّال | خطوات + انتظار أحداث | step.run/sleep/waitForEvent، Memoization، Checkpointing، Durable Endpoints | inngest.com/docs/learn/inngest-steps |
+| 15 | **Google ADK** | github.com/google/adk-python | إطار وكلاء | فعّال (v2.9.1 / 15 سب 2026) | تنسيق حتمي + تقييم مدمج | Sequential/Parallel/Loop Agents، Sessions/State/Memory/Artifacts، Callbacks كنقاط اعتراض سياسية، Evaluation | adk-docs/docs/agents/workflow-agents |
+| 16 | **AWS Strands Agents** | github.com/strands-agents/sdk-python | إطار وكلاء | فعّال | حلقة مدفوعة بالنموذج | Tools كدوال Python، agents-as-tools، Swarm، Graph، Session Management، OTel Observability | strandsagents.com/docs |
+| 17 | **Mastra** | github.com/mastra-ai/mastra | إطار وكلاء/Workflows | فعّال `[تقارير ثانوية]` | Workflows بخطوات مُنمّطة | Suspend/Resume، Snapshots (Time Travel)، .then/.branch/.parallel | github.com/mastra-ai/mastra |
+| 18 | **Microsoft Agent Framework / Semantic Kernel** | learn.microsoft.com + GitHub | إطار وكلاء | فعّال | تنسيق متعدد + سير عمل | Workflow checkpointing، Human-in-the-loop، تكامل A2A/MCP | وثائق مايكروسوفت الرسمية |
+| 19 | **Dapr Agents** | github.com/dapr/dapr-agents | إطار وكلاء | فعّال `[تقارير ثانوية]` | وكلاء فوق Dapr | نمط Actor، State Store، Workflows المتينة | github.com/dapr/dapr-agents |
+| 20 | **MCP (Model Context Protocol)** | modelcontextprotocol.io/specification/2025-06-18 | مواصفة بروتوكول | قياسي فعّال | توحيد الأدوات والموارد | Tools/Resources/Prompts/Sampling/Elicitation/Roots + صفحة Security Best Practices | modelcontextprotocol.io/.../security_best_practices |
+| 21 | **A2A (Agent2Agent)** | a2a-protocol.org/latest/specification/ | مواصفة بروتوكول | قياسي فعّال | تفاعل بين وكلاء مستقلين | AgentCard، Tasks/TaskState، Artifacts، Push Notification Configs، Capability Validation، AuthenticationInfo | a2a-protocol.org |
+| 22 | **anthropics/sandbox-runtime (srt)** | github.com/anthropics/sandbox-runtime | أداة عزل | فعّال | عزل نظام ملفات + شبكة بلا حاوية | Seatbelt (macOS) / bubblewrap (Linux)، إزالة Network Namespace، بروكسي HTTP+SOCKS، منع-ثم-سماح للقراءة، allow-only للشبكة، فحص العناوين المُحلَّلة (DNS rebinding)، نسبة المخالفات عبر commandId، TLS Termination (تجريبي) | README المستودع |
+| 23 | **K8s Agent Sandbox** | github.com/kubernetes-sigs/agent-sandbox | CRD + Controller | فعّال (Apache-2.0، ~3.9k ★) | عزل أحادي/حالٍ على K8s | Sandbox CRD (هوية ثابتة + تخزين دائم + lifecycle: إنشاء/حذف مجدول/إيقاف/استئناف)، SandboxTemplate، SandboxClaim، SandboxWarmPool، تفويض العزل لـ gVisor/Kata عبر RuntimeClass | README المستودع |
+| 24 | **CaMeL** | arXiv:2503.18813 + github.com/google-research/camel-prompt-injection | ورقة + كود | ورقة (v2 يونيو 2025) | منع حقن الأوامر بالتصميم | استخراج تدفق التحكّم/البيانات من استعلام موثوق، Capabilities لفرض سياسات منع التسريب؛ 77% من مهام AgentDojo بأمان مُبرهن مقابل 84% بلا حماية | arXiv:2503.18813 |
+| 25 | **LiteLLM Router** | docs.litellm.ai/docs/routing | بوابة/موجّه | فعّال | توجيه وتحمّل الفشل | Fallbacks، Cooldowns، Retries+Exp Backoff، Weighted/Latency-Based/Least-Busy/Rate-Limit-Aware/Lowest-Cost Routing، Budget Routing، Tag Routing، Health-Check Routing، Auto Router | docs.litellm.ai |
+| 26 | **bolt.diy** | github.com/stackblitz-labs/bolt.diy | باني تطبيقات (OSS) | فعّال (MIT) | توليد وتشغيل تطبيقات في المتصفح | WebContainers (Node.js داخل المتصفح)، نظام ملفات افتراضي، حلقة تغذية راجعة من أخطاء البناء؛ **تحذير ترخيص تجاري لـ WebContainers API** | README المستودع |
+| 27 | **Dyad** | github.com/dyad-sh/dyad | باني تطبيقات (OSS) | فعّال | بناء محلي بمفاتيح المستخدم | مساحة عمل محلية + معاينة معزولة + تحقق/اختبارات E2E؛ Docker في بنية التطوير/الاختبار (لا يثبت تشغيل كل تطبيق داخل Docker) | README المستودع |
+| 28 | **Suna (Kortix)** | github.com/kortix-ai/suna | باني/وكيل عام (OSS) | فعّال | وكيل بمساحة معزولة لكل جلسة | Sandbox لكل جلسة (backend/core/sandbox)، تنفيذ مدعوم بـ Daytona، تدفق Change Request/موافقة بشرية قبل الدمج | README + مسار الكود |
+| 29 | **E2B Fragments** | github.com/e2b-dev/fragments | قالب (OSS) | فعّال | تطبيق مولَّد داخل سحابة معزولة | توليد مشروع Next.js + تنفيذ في Sandboxes منفصلة | README المستودع |
+| 30 | **Onlook** | github.com/onlook-dev/onlook | بيئة تصميم/كود | فعّال | تحرير بصري يمسّ شجرة الكود الفعلية | تعديلات مصدرية على مشروع React حقيقي + معاينة محلية + إعادة تغذية أخطاء المترجم | README المستودع |
+| 31 | **Wasp OpenSaaS** | github.com/wasp-lang/open-saas | قالب/مولّد | فعّال | توليد SaaS كامل بشكل حتمي | مواصفة Wasp تصريحية → React/Node/Postgres؛ **مولّد حتمي لا وكيل مُصلِح ذاتيًا** | README المستودع |
+| 32 | **METR — أفق المهام الطويلة** | arXiv:2503.14499 + metr.org/blog/2025-03-19-... | ورقة + مدونة | منشور | قياس قدرة الوكلاء على مهام طويلة | «زمن أفق 50% نجاح»؛ تضاعف كل ~7 أشهر؛ o3 ≈ 110 دقيقة؛ تحذير صريح من التعميم | arXiv:2503.14499 |
+| 33 | **The SWE-Bench Illusion** | arXiv:2506.12286 | ورقة نقدية | منشور | كشف الحفظ بدل الاستدلال | تحديد مسار الملف المعطوب من نص المسألة فقط: حتى 76% على Verified مقابل حتى 53% خارج المعيار | arXiv:2506.12286 |
+| 34 | **SLSA Provenance** | slsa.dev/spec/v1.0/provenance | مواصفة | قياسي | إثبات سلسلة البناء | بيان Provenance موقّع يربط المُخرَج بالمصدر وعملية البناء | slsa.dev |
+| 35 | **in-toto / Sigstore / Rekor** | in-toto.io، docs.sigstore.dev | مواصفة + أدوات | قياسي/فعّال | تحقق من سلسلة التوريد وتوقيع شفاف | Attestations مرتبطة بالخطوات، توقيع cosign، سجل شفافية Rekor | in-toto.io، docs.sigstore.dev |
+| 36 | **CycloneDX / SPDX** | cyclonedx.org، spdx.dev | مواصفة SBOM | قياسي | جرد المكوّنات | SBOM آلي يصف التبعيات وإصداراتها | cyclonedx.org/specification/overview |
+| 37 | **OpenTelemetry GenAI SemConv** | opentelemetry.io/docs/specs/semconv/gen-ai/ | مواصفة قياس | قياسي | توحيد تتبّع الوكلاء | Spans/Attributes لعمليات LLM والأدوات والوكلاء `[تقارير ثانوية]` | opentelemetry.io |
+| 38 | **OPA / Rego** | openpolicyagent.org/docs/latest/ | محرّك سياسات | إنتاجي | تقييم سياسات قابل للتدقيق | سياسات ككود (Rego)، قرار خارجي، فصل القرار عن التنفيذ | openpolicyagent.org |
+| 39 | **AWS Cedar** | docs.cedarpolicy.com | لغة/محرّك سياسات | إنتاجي | تصريح أدق (Authorization) | نموذج Principal/Action/Resource/Context، تحليل جزئي للطلبات | docs.cedarpolicy.com |
+| 40 | **HumanLayer** | github.com/humanlayer/humanlayer | أداة موافقات | فعّال `[تقارير ثانوية]` | بوابات موافقة بشرية | Approval gates، Escalation، قنوات (Slack/Email)، سجل تدقيق | مستودع المشروع |
+
+**ملاحظة تكرار — استُبعدت من الحصر لوجودها في جدولك مسبقًا:** OpenHands/OpenDevin، SWE-agent، Aider، Cline، Roo Code، Claude Code، OpenCode، Goose، Devin، MetaGPT، ChatDev، LangGraph، AutoGen، CrewAI، PydanticAI، smolagents، DSPy، browser-use، AutoGPT، Devika، Sweep، Codegen، Factory AI، Poolside، Magic.dev، Replit Agent، Lovable، Bolt.new، v0، Firebase Studio، OpenAI Agents SDK، Letta/MemGPT، Langfuse، LangSmith، AgentOps، E2B، Browserbase، Steel، Open Interpreter، GPT-Engineer، Agent Zero، Tabby، Codeium/Windsurf، Augment، Bito، Grit، Moderne، Codemod، MarsCode، Trae، Zed، Void، PearAI، Melty، Kiro، Antigravity، T3 Code، GoCodeo، Codebuff، MonkeyCode، NxCode، CodeMate، Amazon Q، Copilot Workspace، Gemini Code Assist، Snyk/Veracode/SonarQube.
+
+---
+
+## 3. نتائج معمارية معمّقة (Deep Architecture Findings)
+
+### 3.1 Agentless — الدليل المضاد: «البساطة تفوز»
+`[دليل]` المراحل الثلاث صريحة: Localization → Repair → Patch Validation، دون أن يقرر النموذج الخطوة التالية ودون أدوات معقّدة. التوطين **هرمي**: مستودع → ملفات → أصناف/دوال → أسطر، بمساعدة استرجاع تشابهي (Embeddings). النتيجة المعلنة: **32.00% (96 إصلاحًا صحيحًا) على SWE-bench Lite بتكلفة ~$0.70** (arXiv:2407.01489v2).
+- **المغزى المعماري:** قدر كبير من «الوكالة» في الأنظمة المعاصرة كان زيادة تعقيد بلا مردود على المهمة. في QEVION: افصل «تحديد النطاق» عن «التنفيذ» حتى داخل نفس المصنع.
+- **الحدّ:** لا حالة طويلة، لا استئناف، ولا تعامل مع مهام متعددة الخطوات خارج نطاق إصلاح عطل.
+- المصدر: https://github.com/OpenAutoCoder/Agentless
+
+### 3.2 AutoCodeRover — الوعي ببنية البرنامج + توطين قائم على التنفيذ
+`[دليل]` يحوّل المستودع إلى تمثيل بنيوي (أصناف/دوال) بدل شجرة ملفات مسطّحة، ويستعمل بحثًا بنيويًا موجّهًا بـ LLM، مع إمكانية تشغيل الاختبارات واستخدام **Spectrum-Based Fault Localization (SBFL)** لترتيب الشُّبهات، ثم يولّد الرقعة ويتحقق منها بالاختبارات. الأرقام المعلنة في المستودع: **37.3% pass@1 على SWE-bench Lite** و**46.2% على SWE-bench Verified**، بتكلفة أقل من $0.70 للمهمة في تلك التهيئة.
+- **المغزى:** الانضباط في «ترتيب الشُّبهات» (Suspect Ranking) يقلّل التعديل العشوائي على ملفات غير ذات صلة — وهو بالضبط ما تحتاجه QEVION لمنع الانحراف المعماري.
+- المصادر: https://github.com/AutoCodeRoverSG/auto-code-rover، arXiv:2404.05427
+
+### 3.3 Moatless Tools / SWE-Search — السياق المُهندَس + بحث شجري
+`[دليل]` يبني البحث على **tree-sitter** (AST) ومخازن **متجهات** (Voyage AI embeddings جاهزة لمهام SWE-Bench)، ويشغّل عبر Docker، ويحفظ حالة المشروع على القرص في `.moatless/projects/<eval-name>` — أي أن **الذاكرة/الحالة لكل تقييم مُتجسّدة كملفات** قابلة للتفتيش بعد التشغيل. المشروع الشقيق **moatless-tree-search** يطبّق SWE-Search (arXiv:2410.20285) باستخدام **Monte Carlo Tree Search** مع تحسين تكراري.
+- **المغزى:** MCTS فوق أفعال الوكيل = آلية لاكتشاف مسارات إصلاح بديلة عند الفشل، بدل إعادة المحاولة العمياء.
+- **الحدّ:** تكلفة توكن عالية، وضبط معقّد، وتمركز على Python/SWE-bench.
+- المصادر: https://github.com/aorwall/moatless-tools، https://github.com/aorwall/moatless-tree-search
+
+### 3.4 Temporal / Restate / DBOS / Inngest — الحلقة المفقودة في وكلاء البرمجة
+كل الأنظمة في العائلة 1 تفتقد **الحالة المتينة**. أطر التنفيذ المتين تقدّم بالضبط هذه الطبقة:
+
+| الآلية | Temporal | Restate | DBOS | Inngest |
+|---|---|---|---|---|
+| سجل أحداث + إعادة تشغيل حتمية | **Event History + Replay** | **Journal** | Checkpoints في Postgres | Memoized steps |
+| عزل عدم الحتمية | Activities منفصلة | Durable Steps | Steps | step.run |
+| التعامل مع تغيّر الكود | GetVersion/Patching + Worker Versioning | إصدارات الخدمة/التهيئة | ترحيل حالة في DB | نسخ الدوال |
+| مضاعفة الآثار الجانبية | تتطلب Idempotency في الـ Activity | Idempotency Key مدمج | Idempotency خارجي | تعطيل/تشغيل checkpointing |
+| الاستئناف بعد الانقطاع | إعادة بناء الحالة من التاريخ | Replay من Journal | استئناف من آخر خطوة | استئناف من آخر checkpoint |
+| نقاط ضعف موثّقة | خطأ عدم الحتمية يُفسد الـ Replay | عمليات غير مُغلّفة تُبعد الـ Replay | الآثار الخارجية ليست exactly-once | قيود في الفروع المتوازية |
+
+`[دليل]` المصادر: Temporal `https://docs.temporal.io/workflows` و`/develop/python/workflows/versioning`؛ Restate `https://docs.restate.dev/develop/ts/durable-steps` و`/guides/request-lifecycle`؛ DBOS `https://docs.dbos.dev/architecture` و`/explanations/comparing-temporal`؛ Inngest `https://www.inngest.com/docs/learn/inngest-steps` و`/setup/checkpointing`.
+- **المغزى لـ QEVION `[استنتاج هندسي]`:** «مصنع التطبيقات» بطبيعته سير عمل طويل (ساعات/أيام) متعدد المراحل. إعادة استخدام نمط `Event History + Replay + Idempotent Activities` يحلّ الدمج بين متطلبك «الاستمرار بعد المقاطعة» و«إنتاج الأدلة» — لأن سجل الأحداث **هو نفسه** سجل الأدلة. هذه أعلى نسبة فائدة/تكلفة في كل التقرير.
+
+### 3.5 Google ADK — التنسيق الحتمي مقابل التنسيق المدفوع بالنموذج
+`[دليل]` ADK (repo `github.com/google/adk-python`، الإصدار v2.9.1 بتاريخ 15 سبتمبر 2026) يوفّر `SequentialAgent`، `ParallelAgent`، `LoopAgent` — تنفيذ **حتمي** يتبع تدفقًا معرّفًا بالكود بدل ترك اختيار المسار للنموذج، مع شرط إنهاء للحلقة. الحالة تُحمَل عبر `Session` و`Invocation Context` (تاريخ محادثة + حالة تطبيق/مستخدم/جلسة + أحداث)، ووحدات `sessions` و`memory` و`artifacts`، و**Callbacks** كنقاط اعتراض قبل/بعد تنفيذ الوكيل واستدعاء النموذج والأداة (تُستخدم للسياسات والموافقات والتسجيل)، مع حزمة `evaluation` مدمجة.
+- **المغزى:** نمط «Callbacks كنقاط سياسة» يمنحك تدقيقًا واعتراضًا على كل فعل **دون** تعديل منطق الوكيل — وهذا يطابق مبدأ العقود/السياسات في QEVION.
+- المصادر: `github.com/google/adk-python`، `github.com/google/adk-docs/blob/main/docs/agents/workflow-agents/index.md`
+
+### 3.6 AWS Strands — الحلقة المدفوعة بالنموذج + أنماط تصعيد التنسيق
+`[دليل]` ثلاث درجات تصاعدية من التنسيق: **agents-as-tools** (وكيل أب يحتفظ بالحلقة)، **swarm** (تعاون مع سياق/ذاكرة عمل مشتركة)، **graph** (عُقد وحواف صريحة). الأدوات = دوال Python عادية (الحد الفعلي للآثار الجانبية). إدارة الجلسات تسمح بالتسلسل/الاستعادة للاستئناف، وطبقة Observability متوافقة مع OpenTelemetry.
+- **المغزى:** «الوكيل الأب يحتفظ بالحلقة، والابن يُستدعى كأداة» هو أبسط نمط تفويض قابل للتدقيق — مناسب كبداية لـ QEVION بدل أنظمة Swarm الكاملة.
+- المصادر: `github.com/strands-agents/sdk-python`، `https://strandsagents.com/docs/user-guide/concepts/multi-agent/swarm/`
+
+### 3.7 MCP + A2A — العقود البروتوكولية
+`[دليل]` صفحة **MCP Security Best Practices** تعالج مخاطر مسمّاة: **Confused Deputy** (خادم وسيط بمُعرّف عميل ثابت يستغل كوكي الموافقة لتجاوز موافقة المستخدم)، **Token Passthrough**، **Session Hijacking**، **Scope Minimization**، والتحقق من عناوين OAuth (مرجع RFC 9700). الحلّ المطلوب نصًّا: **موافقة لكل عميل (per-client consent)** وتخزينها، وأقل صلاحية ممكنة. URL: `modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices`.
+ويُعرِّف **A2A**: `AgentCard` (وصف الوكيل وقدراته)، و`Task`/`TaskState`، و`Artifact`، و`TaskStatusUpdateEvent`/`TaskArtifactUpdateEvent`، و`PushNotificationConfig`، و`AuthenticationInfo`، مع قسم **Capability Validation**. URL: `a2a-protocol.org/latest/specification/`.
+- **المغزى لـ QEVION (مهم جدًا):** `AgentCard` هو الترجمة القياسية لمفهوم «سجل القدرات» عندك، و`Artifact` هو ترجمته لمفهوم «المخرجات الموثّقة». تبنّي مخططين قياسيين أفضل من اختراع مخطط داخلي، ويجعل QEVION قابلًا للاستضافة كطرف في منظومة وكلاء.
+- **تحذير آمن:** مصدر الخطر في MCP ليس الأدوات بل **الموافقة**؛ إن لم يكن سجل الموافقة لكل عميل/مستأجر مربوطًا بالجلسة، تُخترق حدود العزل من طبقة البروتوكول لا من طبقة التنفيذ.
+
+### 3.8 anthropics/sandbox-runtime — أنضج نموذج عزل عملي متاح للقراءة
+`[دليل]` الأداة (`srt`) تفرض قيود نظام الملفات والشبكة على أي عملية **بدون حاوية**:
+- **macOS:** `sandbox-exec` بملفات Seatbelt مُولّدة ديناميكيًا. **Linux:** `bubblewrap` مع إزالة Network Namespace بالكامل. **Windows:** مرشّح WFP على مستوى الجهاز يمنع كل الاتصالات الصادرة من حساب `srt-sandbox` عدا حلقة العودة إلى البروكسي.
+- **الشبكة بنمط allow-only:** كل شيء ممنوع افتراضيًا؛ القائمة الفارغة = لا شبكة؛ المرور عبر بروكسي HTTP + SOCKS5 على المضيف؛ دعم wildcards و`:port`، و`deniedDomains` لها أسبقية، و`deniedDomainReasons` تُرجع رسالة للنموذج تشرح البديل المسموح.
+- **دفاع DNS Rebinding:** يفحص العنوان المُحلَّل قبل الاتصال ويرفض loopback/link-local/عناوين الاستدعاء السحابي (metadata: 100.100.100.200، 168.63.129.16، 192.0.0.192، ...) وعناوين الواجهات المحلية، ويُسجّل المخالفة **دون تسريب العنوان نفسه** في السجلات.
+- **الملفات:** القراءة بنمط **منع-ثم-سماح** (allowRead لها أسبقية)، والكتابة بنمط **denyWrite لها أسبقية** — أي أن منع كتابة `.env` يسري حتى داخل مجلد مسموح.
+- **نسبة المخالفات (Violation Attribution)** عبر `commandId`: تُخزَّن المخالفات (seatbelt/seccomp/منع البروكسي) تحت مفتاح الأمر، ويمكن استرجاعها لكل استدعاء أداة — أي **دليل جاهز لكل فعل**.
+- **TLS Termination (تجريبي):** إنهاء CONNECT داخل العملية لفلترة الطلبات المفكوكة، مع Trust Bundle يحتوي MITM CA، واستثناء mTLS.
+- **تحذيرات أمنية صريحة في التوثيق:** `enableWeakerNetworkIsolation` يفتح مسار تسريب عبر `trustd`؛ و`allowAppleEvents` **يُلغي عزل تنفيذ الكود** (يمكن تشغيل تطبيقات خارج الصندوق). وتوصية صريحة: **لا تأخذ هذه الإعدادات من ملفات داخل مستودع مُستنسخ**، لأن ذلك يسمح لمشروع مؤلَّف من مهاجم برفع صلاحياته.
+- المصدر: https://github.com/anthropics/sandbox-runtime
+
+### 3.9 Kubernetes Agent Sandbox — العزل كـ«مَورِد مُدار»
+`[دليل]` `Sandbox` CRD يدير **حمولة مفردة، حالية، ذات هوية ثابتة** وتخزين دائم يعيش عبر إعادة التشغيل، مع دورة حياة: إنشاء، حذف مجدول، إيقاف، استئناف. الإضافات: `SandboxTemplate` (قوالب)، `SandboxClaim` (مطالبة تُجرّد تفاصيل التهيئة)، و`SandboxWarmPool` (تجمع دافئ لتقليل زمن التهيئة). **النطاق معلن صراحة**: المشروع **مُنظِّم صندوق رملي** يفوّض العزل المنخفض المستوى إلى Runtimes مثل gVisor أو Kata عبر `RuntimeClass`. الترخيص Apache-2.0.
+- **المغزى لـ QEVION:** هذا هو الشكل الصحيح لتحويل «العزل» إلى عقد: كل جلسة مصنع تطبيقات = Sandbox بحالة دائمة وهوية ثابتة، وتفويض شدّة العزل (namespace/VM) لتطبيق مسؤول. و«Warm Pool» يحلّ مشكلة زمن البدء البارد وهو تحدٍّ حقيقي في التوليد التفاعلي.
+- المصدر: https://github.com/kubernetes-sigs/agent-sandbox
+
+### 3.10 CaMeL — الأمان بالتصميم لا بالتعليمات
+`[دليل]` بدل الاعتماد على «تحصين الأوامر» (Prompt Hardening)، يستخرج CaMeL **تدفق التحكّم وتدفق البيانات** من الاستعلام الموثوق، فلا يستطيع البيانات غير الموثوقة التأثير على مسار البرنامج أصلًا، ويستخدم **Capabilities** لمنع تسريب البيانات الخاصة عبر مسارات غير مصرّح بها عند استدعاء الأدوات. النتيجة: **77% من مهام AgentDojo بأمان قابل للإثبات** مقابل 84% لنظام بلا حماية. الكود متاح في `github.com/google-research/camel-prompt-injection`.
+- **المغزى:** ثمن الأمان هنا ≈ 7 نقاط نجاح. أي مصنع تطبيقات يقرأ محتوى مستودعات/ملفات/ويب غير موثوقة ويملك أدوات كتابة وتنفيذ فهو ضمن «الثالوث القاتل»، ويحتاج فصل تدفق التحكّم عن البيانات كقرار معماري لا كإرشاد.
+- المصدر: arXiv:2503.18813
+
+### 3.11 LiteLLM Router — تجريد المزوّدين كمكوّن جاهز
+`[دليل]` استراتيجيات توجيه مسمّاة: Weighted Pick (الافتراضي الموصى به للإنتاج)، Rate-Limit Aware v2، Latency-Based، Least-Busy، Lowest-Cost، Custom؛ مع Fallbacks للمزوّد، Cooldowns، Timeouts، Retries بتراجع أسّي، Routing حسب الـ Tag، Budget Routing للمزوّد، Health-Check-Driven Routing، وAuto Router. والتوثيق يحذّر صراحةً أن التوجيه القائم على الاستخدام ليس موصى به للإنتاج لارتفاع زمن الاستجابة بسبب عمليات Redis.
+- **المغزى:** طبقة تجريد المزوّدين في QEVION أفضل مبنية على معيار فعلي بنفس مسمّيات الاستراتيجيات (تكلفة/زمن/تقييد معدّل) بدل اختراع تصنيف داخلي.
+- المصدر: https://docs.litellm.ai/docs/routing
+
+### 3.12 بناة التطبيقات — ما هو قابل للنقل فعلًا
+- **bolt.diy** `[دليل]`: WebContainers = Node.js داخل المتصفح مع نظام ملفات افتراضي، وحلقة إصلاح مبنية على إعادة مخرجات الأوامر والأخطاء إلى النموذج. **قيد ترخيص تجاري** على WebContainers API.
+- **Suna/Kortix** `[دليل]`: صندوق معزول **لكل جلسة**، وتنفيذ مدعوم بـ Daytona، و**تدفق Change Request/موافقة بشرية** يبقي العمل على فرع حتى يقبله إنسان.
+- **Dyad** `[دليل]`: مساحة محلية + معاينة معزولة + تحقق/اختبارات؛ Docker في بنية التطوير — **لا دليل** على عزل كل تطبيق مُولَّد.
+- **E2B Fragments** `[دليل]`: قالب Next.js يولّد مشروعًا ويُشغّله في Sandbox سحابي منفصل (معاينة = تشغيل حقيقي لا عرض ثابت).
+- **Onlook** `[دليل]`: التحرير البصري يعدّل **شجرة مصدر React الفعلية** ثم يعيد التغذية من المترجم.
+- **Wasp OpenSaaS** `[دليل]`: مولّد حتمي من مواصفة تصريحية — لا حلقة إصلاح ذاتي (تأتي من وكيل خارجي).
+- **المغزى:** الآليات القابلة للنقل هي: `WebContainer/VF` للاستعراض السريع، `Sandbox-per-session` للتنفيذ، `Change Request Approval` قبل الدمج، و`Compiler/Runtime feedback loop` — وليس «التوليد الكامل بسطر واحد» الذي هو تسويق لا معمارية.
+
+---
+
+## 4. كتالوج الآليات القابلة لإعادة الاستخدام (Reusable Mechanism Catalog)
+
+> مُنظَّم **بالآلية** لا بالمشروع، كما طُلب.
+
+### فئة أ — فهم المستودع (Repository Understanding)
+
+**أ1. التمثيل البنيوي للبرنامج (Program-Structure Representation)**
+- المشكلة: شجرة الملفات المسطّحة لا تُظهر حدود الدوال/الأصناف، فيعدّل الوكيل ملفات غير ذات صلة.
+- التطبيق: AutoCodeRover يحوّل المستودع إلى أصناف/دوال ويبحث بنيويًا.
+- الدليل: arXiv:2404.05427، README المستودع.
+- القوة: يقلّل التعديل العشوائي ويحسّن دقة الرقعة. الضعف: يعتمد على محلّلات لكل لغة (فسيفساء لغوية في QEVION).
+- صلة QEVION: **مباشر**.
+
+**أ2. توطين هرمي (Hierarchical Localization)**
+- المشكلة: ملايين الأسطر مقابل نافذة سياق محدودة.
+- التطبيق: Agentless: مستودع→ملف→صنف/دالة→سطر عبر استرجاع تشابهي.
+- الدليل: arXiv:2407.01489v2.
+- القوة: بسيط وقابل للتفسير وقليل التكلفة. الضعف: يتطلب فهرسة مسبقة وحديثة (تكلفة فهرسة عند كل تغيير كبير).
+- صلة QEVION: **مباشر**.
+
+**أ3. ترتيب الشُّبهات التنفيذي (Execution-based / SBFL Suspect Ranking)**
+- المشكلة: «أين العطل؟» قبل «كيف نُصلحه؟».
+- التطبيق: AutoCodeRover يشغّل الاختبارات ويستخدم Spectrum-Based Fault Localization.
+- القوة: دليل تنفيذي لا تخمين لغوي. الضعف: يحتاج حزمة اختبارات تعمل وسريعة داخل الصندوق.
+- صلة QEVION: **مباشر مع تكييف**.
+
+**أ4. حالة المستودع متجسّدة على القرص (Disk-Embodied Project State)**
+- المشكلة: ذاكرة الوكيل تضيع بين الجلسات.
+- التطبيق: Moatless يكتب حالة كل تقييم في `.moatless/projects/<name>`.
+- القوة: قابلة للتفتيش وإعادة التشغيل بلا قاعدة بيانات. الضعف: لا تصلح للتزامن متعدد الوكلاء بلا قفل.
+- صلة QEVION: **مباشر** (مكمّل لسجل الأحداث لا بديل عنه).
+
+**أ5. البحث الشجري عن مسار الإصلاح (MCTS over Repair Actions)**
+- المشكلة: الفشل مرة واحدة يقود لإعادة محاولة عمياء.
+- التطبيق: SWE-Search / moatless-tree-search (arXiv:2410.20285).
+- القوة: يستكشف بدائل مُرتَّبة. الضعف: تكلفة توكن عالية، وضبط دقيق.
+- صلة QEVION: **مفيد مع تكييف** (للحالات الحرجة فقط، لا كمسار افتراضي).
+
+### فئة ب — الحالة والاستمرارية والاستئناف (State & Durability)
+
+**ب1. سجل الأحداث + إعادة التشغيل الحتمية (Event History + Deterministic Replay)**
+- المشكلة: الانقطاع/إعادة النشر يفقدان التقدّم ويعيدان تنفيذ آثار جانبية.
+- التطبيق: Temporal (Workflows/Activities/GetVersion/Worker Versioning)، Restate (Journal/Durable Steps).
+- الدليل: `docs.temporal.io/workflows`، `docs.restate.dev/develop/ts/durable-steps`.
+- القوة: حالة قابلة لإعادة البناء = سجل تدقيق مجاني. الضعف: يفرض انضباط حتمية (كل عدم-حتمية يجب تغليفها)، وأخطاء الحتمية تُنتج أخطاء إعادة تشغيل غير بديهية.
+- صلة QEVION: **مباشر** — أهم آلية في التقرير.
+
+**ب2. ترقيع الإصدارات (Workflow Versioning / Patching)**
+- المشكلة: تحديث كود المصنع يفسد تشغيلات جارية طويلة الأمد.
+- التطبيق: Temporal `GetVersion`/Patching + Worker Versioning وتثبيت التنفيذ على إصدار.
+- القوة: يسمح بتشغيل إصدارين من الكود بالتوازي على نفس السجل. الضعف: تعقيد تشغيلي وديون تقنية في الفروع الشرطية.
+- صلة QEVION: **مباشر** (مصنع تطبيقات يتطور أثناء وجود تشغيلات حيّة).
+
+**ب3. مفاتيح عدم التكرار للآثار الجانبية (Idempotency Keys)**
+- المشكلة: «exactly-once» غير موجودة للآثار الخارجية (دفع كود، نشر، إرسال).
+- التطبيق: Restate (مدمج)، DBOS/Temporal (تتطلبها من الخطوة).
+- القوة: تُنهي الازدواج عند الاستئناف. الضعف: يجب أن يوفّر كل نظام خارجي مفتاحًا (بما فيها Git/Deploy).
+- صلة QEVION: **مباشر**.
+
+**ب4. التعليق والاستئناف مع مهلة خمول (Suspension & Resume)**
+- المشكلة: انتظار موافقة بشرية أو webhook لأيام دون استهلاك موارد.
+- التطبيق: Restate Suspensions، Inngest `step.sleep`/`step.waitForEvent`.
+- القوة: كفاءة موارد + استئناف دقيق. الضعف: ضبط المهلة مع زمن استجابة النماذج الطويل.
+- صلة QEVION: **مباشر** (بوابات سياسة/موافقة).
+
+**ب5. لقطة قابلة للاسترجاع (Snapshot / Time Travel)**
+- المشكلة: «ماذا كانت حالة المشروع قبل 40 خطوة؟».
+- التطبيق: Mastra Snapshots `[تقارير ثانوية]`؛ حالة Moatless على القرص؛ تخزين DBOS في Postgres.
+- صلة QEVION: **مفيد مع تكييف**.
+
+### فئة ج — التنسيق وتقسيم العمل (Orchestration & Decomposition)
+
+**ج1. تنسيق حتمي بدل قرار نموذجي (Deterministic Control Flow)**
+- التطبيق: ADK `SequentialAgent`/`ParallelAgent`/`LoopAgent` بشرط إنهاء معرّف.
+- القوة: سلوك قابل للاختبار وإعادة الإنتاج. الضعف: صلابة أمام حالات غير متوقّعة تحتاج تفريعًا ديناميكيًا.
+- صلة QEVION: **مباشر** (يتوافق مع «العقود»: المسار معلوم، والقرار داخل الخطوة).
+
+**ج2. نقاط اعتراض ما قبل/ما بعد كي تكون سياسة (Before/After Callbacks as Policy Hooks)**
+- التطبيق: ADK Callbacks حول الوكيل واستدعاء النموذج والأداة (فحص، تعديل السياق، إسقاط التنفيذ، تسجيل).
+- القوة: فرض سياسة بلا تعديل منطق الوكيل = فصل صلاحيات نظيف.
+- صلة QEVION: **مباشر** — تطبيق عملي لمبدأ «Policy Control» عندك.
+
+**ج3. التصعيد التدريجي في التنسيق (Agents-as-Tools → Swarm → Graph)**
+- التطبيق: Strands. القوة: تبدأ بأبسط نمط قابل للتدقيق. الضعف: Swarm يفقد مسار تدقيق واضح ويتطلب ذاكرة عمل مشتركة منضبطة.
+- صلة QEVION: **مباشر للدرجة الأولى، مؤجَّل للثانية والثالثة**.
+
+**ج4. الرسوم والعُقد الصريحة (Explicit Node/Edge Graph)**
+- التطبيق: Strands Graph، Mastra `.then/.branch/.parallel`.
+- صلة QEVION: **مفيد مع تكييف** (يجب أن تُولَّد العُقد من سجل القدرات لا يدويًا).
+
+**ج5. الأحداث والقطع كمخرجات مُعيارية (Task/Artifact/Event Model)**
+- التطبيق: A2A `Task`/`TaskState`/`Artifact`/`TaskStatusUpdateEvent`/`TaskArtifactUpdateEvent`/`PushNotificationConfig`.
+- القوة: نفس البنية تصلح للتنسيق الداخلي **وللتصدير** لطرف خارجي. الضعف: معيار لا يفرض دلالات تحقق.
+- صلة QEVION: **مباشر**.
+
+### فئة د — الأمان والحدود (Safety, Sandbox, Policy)
+
+**د1. عزل على مستوى نظام التشغيل بلا حاوية (OS-level Sandboxing without Containers)**
+- التطبيق: anthropics/sandbox-runtime: Seatbelt/bubblewrap/WFP + إزالة Network Namespace.
+- القوة: زمن بدء منخفض جدًا مقارنة بالـ VM؛ يصلح لأوامر متكررة. الضعف: يعتمد على النظام المضيف، ودعم Windows مختلف (مرشّح WFP)، ولا يعزل نواة النظام.
+- صلة QEVION: **مفيد مع تكييف** (طبقة خفيفة للأوامر القصيرة فوقها عزل ثقيل للجلسات الكاملة).
+
+**د2. مسارات الكتابة المُقيَّدة بأسبقية المنع (Path-Scoped Writes, deny-wins)**
+- التطبيق: srt `denyWrite` يتغلّب على `allowWrite`، و`denyRead` أعمّ مع استثناءات دقيقة (`**/.env`، `./secrets`).
+- صلة QEVION: **مباشر** — يترجم مباشرة إلى «حدود مستأجر + أسرار».
+
+**د3. الشبكة: منع افتراضي + بروكسي بقائمة سماح (Deny-by-default Egress with Proxy Allowlist)**
+- التطبيق: srt بنمط allow-only + HTTP/SOCKS؛ رفض الأسماء مع قائمة فارغة = لا شبكة إطلاقًا.
+- صلة QEVION: **مباشر** (سياسة الشبكة في المصنع يجب أن تكون قائمة سماح لا قائمة منع).
+
+**د4. فحص العنوان المُحلَّل ضد DNS Rebinding والوصول للـ Metadata السحابي**
+- التطبيق: srt يرفض loopback/link-local/عناوين metadata ويحذّر أن العناوين الموصولة لهذا المضيف بـ NAT ليست مغطاة تلقائيًا وتحتاج إدراجًا يدويًا.
+- صلة QEVION: **مباشر** — ثغرة تسريب بيانات الاستضافة شائعة الإهمال.
+
+**د5. نسبة المخالفات لكل استدعاء أداة (Violation Attribution per Command)**
+- التطبيق: srt يخزّن مخالفات seatbelt/seccomp/البروكسي تحت `commandId` ويستعيدها بـ`getViolationsForCommand`.
+- القوة: **دليل أمني لكل فعل** بلا عمل إضافي من الوكيل.
+- صلة QEVION: **مباشر** — يغذّي «سجل الأدلة» تلقائيًا.
+
+**د6. بوابة الموافقة لكل عميل (Per-Client Consent) وضد Confused Deputy**
+- التطبيق: متطلّب MUST في مواصفة MCP + قضايا Token Passthrough وSession Hijacking وScope Minimization.
+- صلة QEVION: **مباشر** (مستأجر/عميل = حدود موافقة مستقلة).
+
+**د7. عزل تدفق التحكّم عن البيانات (Control-Flow Isolation) + Capabilities**
+- التطبيق: CaMeL: استخلاص تدفق التحكّم/البيانات من الاستعلام الموثوق، وCapabilities عند استدعاء الأدوات، بتكلفة ≈7 نقاط نجاح.
+- صلة QEVION: **مفيد مع تكييف** (ثمنه إعادة هيكلة طبقة الاتصال بالنموذج)، لكنه الخيار المبدئي الصحيح لأن المصنع يقرأ بيانات غير موثوقة.
+
+**د8. الصندوق الرملي كَمَورِد مُدار بحالة دائمة (Sandbox as Managed, Stateful Resource)**
+- التطبيق: K8s Agent Sandbox: هوية ثابتة، تخزين دائم، pause/resume، WarmPool لتقليل البدء البارد، وتفويض العزل لـgVisor/Kata.
+- صلة QEVION: **مباشر** (يخدم «Tenant Isolation» + «Reproducibility» معًا).
+
+### فئة هـ — التحقق والإصلاح (Verification & Repair)
+
+**هـ1. حلقة تحقق الرقعة (Patch Validation Loop)**
+- التطبيق: Agentless المرحلة الثالثة (تطبيق الرقعة → اختبار → قبول/رفض)، وAutoCodeRover تحقق بالاختبارات.
+- القوة: معيار ثنائي واضح. الضعف: «نجاح الاختبارات» ≠ الصحة الدلالية (وأرقام المعايير مشوّشة — انظر §8).
+- صلة QEVION: **مباشر**.
+
+**هـ2. إعادة التغذية من المترجم/زمن التشغيل (Compiler & Runtime Feedback Loop)**
+- التطبيق: bolt.diy (مخرجات الأوامر والأخطاء → النموذج)، Dyad، Onlook (خطأ المترجم → تعديل الكود).
+- صلة QEVION: **مباشر** — الأرخص والأعلى مردودًا في توليد التطبيقات.
+
+**هـ3. إصلاح ذاتي مُقيَّد بالمحاولات (Bounded Self-Healing)**
+- التطبيق: أنماط بناة التطبيقات تعيد المحاولة على خطأ البناء بحد أقصى قبل التصعيد.
+- صلة QEVION: **مباشر** (يجب أن يكون الحدّ سياسة معلنة لا قيمة سحرية في الكود).
+
+**هـ4. الاختبارات المتولّدة واختيار الانحدار (Test Synthesis & Regression Selection)**
+- التطبيق: Moatless/AutoCodeRover تشغيل مجموعات اختبارات المستودع؛ ومفهوم SWE-smith لتوليد بيئات/أعطال قابلة للتنفيذ.
+- صلة QEVION: **مفيد مع تكييف** (توليد اختبارات عقد للقدرات المُنتَجة).
+
+**هـ5. تقييم مستقل بمعيار متجدّد (Independent, Fresh Evaluation)**
+- التطبيق: SWE-bench-Live (مسائل ما بعد 2024، 1,319 مهمة، 93 مستودعًا)، SWE-rebench (جمع آلي مستمر)، SWE-Bench+ (تصفية ما بعد القطع).
+- صلة QEVION: **مباشر** — أي تقييم داخلي ثابت زمنيًا سيتلوّث بنفس الطريقة.
+
+### فئة و — الإثبات والتوثيق (Evidence & Provenance)
+
+**و1. سجل أحداث = سجل أدلة (Event Log as Evidence)**
+- التطبيق: Temporal Event History، A2A Task events، سجل مخالفات srt.
+- القوة: «ما تغيّر ولماذا» يصبح استعلامًا لا مهمة إضافية.
+- صلة QEVION: **مباشر**.
+
+**و2. ربط المُخرَج بالمدخلات بعملية بناء موقّعة (Signed Build Provenance)**
+- التطبيق: SLSA v1.0 Provenance، in-toto Attestations، cosign/Sigstore، Rekor transparency log.
+- القوة: تحقّق خارجي لا يثق بالمنتج نفسه. الضعف: يفترض خط بناء معرَّفًا لا مولّدًا حرًّا (تحدٍّ حقيقي في التوليد بالـLLM).
+- صلة QEVION: **مفيد مع تكييف** (توقيع «وصفة التوليد» + أثر الأدوات كبيان Provenance).
+
+**و3. جرد المكوّنات (SBOM) للتطبيقات المُولَّدة**
+- التطبيق: CycloneDX/SPDX + قضايا سلسلة التوريد (Dependency Confusion، Typosquatting).
+- صلة QEVION: **مباشر** — التوليد الآلي يختار تبعيات، وهذا قرار أمني يجب أن يُوثَّق ويُقيَّد بقائمة سماح.
+
+**و4. تتبّع معياري (OTel GenAI SemConv)**
+- التطبيق: Spans/Attributes لعمليات LLM/الأدوات/الوكلاء `[تقارير ثانوية]`، وStrands يوفّر Observability متوافقة.
+- صلة QEVION: **مباشر** (يخدم المراقبة وسجل الأدلة بمخطط معياري).
+
+### فئة ز — المزوّدون والتوجيه (Provider Abstraction)
+
+**ز1. استراتيجيات توجيه مسمّاة + إسقاط الفشل**
+- التطبيق: LiteLLM: Fallbacks، Cooldowns، Retries بـBackoff، توجيه بالزمن/التكلفة/الأقل انشغالًا/الوعي بالتقييد، Budget Routing، Tag Routing. وملاحظة موثّقة: الاستراتيجيات القائمة على الاستخدام باهظة زمنيًا.
+- صلة QEVION: **مباشر**.
+
+**ز2. التوجيه الواعي بالقدرة (Capability-Aware Routing)**
+- الحالة: لا يوجد معيار مفتوح موحّد يربط «نوع المهمة» بـ«قدرة النموذج»؛ المتاح سمات إحصائية `[غير محسوم]`.
+- صلة QEVION: **غير محسوم** — يحتاج تجربة داخلية (وهو بالضبط ما يجب أن يكون قيد البحث لا قيد الافتراض).
+
+---
+
+## 5. مصفوفة صلة QEVION (QEVION Relevance Matrix)
+
+> التصنيف **قائم على الدليل الموجود والنطاق الحالي لـQEVION**، لا على الشعبية.
+
+| الآلية | التصنيف | التبرير المختصر |
+|---|---|---|
+| Event History + Replay (سجل أحداث متين) | **DIRECTLY USEFUL** | يغطي في وقت واحد: الاستئناف، الاستمرارية، والأدلة. |
+| Idempotency Keys للآثار الجانبية | **DIRECTLY USEFUL** | شرط لسلامة إعادة التشغيل عند الدفع/النشر/الاختبار. |
+| تعليق/استئناف مع مهلة خمول | **DIRECTLY USEFUL** | بوابات موافقة قد تستمر أيامًا بلا استهلاك موارد. |
+| Workflow Versioning / Patching | **DIRECTLY USEFUL** | تشغيلات طويلة تتقاطع مع ترقيات المصنع. |
+| تنسيق حتمي (Sequential/Parallel/Loop) | **DIRECTLY USEFUL** | يطابق العقدية: المسار معلوم والقرار داخل الخطوة. |
+| Callbacks كنقاط سياسة | **DIRECTLY USEFUL** | ترجمة عملية لفرض السياسة دون لمس منطق الوكيل. |
+| شبكة: منع افتراضي + قائمة سماح عبر بروكسي | **DIRECTLY USEFUL** | حدّ عزل شبه إلزامي لأي توليد كود آلي. |
+| مسارات كتابة بأسبقية منع (deny-wins) | **DIRECTLY USEFUL** | حماية الأسرار وحدود المستأجر. |
+| نسبة المخالفات لكل أمر/أداة | **DIRECTLY USEFUL** | ينتج دليلًا أمنيًا لكل فعل تلقائيًا. |
+| فحص العنوان المُحلَّل (DNS rebinding/metadata) | **DIRECTLY USEFUL** | يمنع تسريب بيانات الاستضافة عبر بيئات التوليد. |
+| Sandbox كمَورِد بحالة دائمة + WarmPool | **DIRECTLY USEFUL** | يخدم العزل + قابلية الاستنساخ + البدء السريع. |
+| بوابة موافقة لكل عميل (per-client consent) | **DIRECTLY USEFUL** | يقفل ثغرة Confused Deputy على مستوى المستأجر. |
+| Task/Artifact/Event model (A2A) | **DIRECTLY USEFUL** | مخطط قياسي للقدرات والمخرجات يقابل مفاهيمك. |
+| تتبّع OTel GenAI SemConv | **DIRECTLY USEFUL** | مراقبة وأدلة بمخطط معياري معتمد. |
+| استراتيجيات توجيه المزوّدين + Fallbacks | **DIRECTLY USEFUL** | تُبنى طبقة المزوّدين على معيار فعلي مسمّى. |
+| تقييم بمعيار متجدّد (Fresh tasks) | **DIRECTLY USEFUL** | يمنع تلوّث المعايير الداخلي. |
+| SBOM للتطبيقات المُولَّدة | **DIRECTLY USEFUL** | قرار التبعيات أمني ويجب توثيقه. |
+| حلقة تحقق الرقعة بالاختبارات | **DIRECTLY USEFUL** | أقل معيار تحقق قابل للتشغيل. |
+| إعادة تغذية المترجم/زمن التشغيل | **DIRECTLY USEFUL** | أعلى مردود/تكلفة في إصلاح البناء. |
+| توطين هرمي (repo→file→symbol→line) | **DIRECTLY USEFUL** | مطلب «فهم المستودع قبل التعديل». |
+| ربط المُخرَج بعملية بناء موقّعة (SLSA/in-toto) | **USEFUL WITH ADAPTATION** | يفترض خط بناء معرَّفًا؛ في التوليد بالـLLM يجب توقيع «الوصفة + الأثر». |
+| عزل نظامي بلا حاوية (Seatbelt/bubblewrap) | **USEFUL WITH ADAPTATION** | ممتاز للأوامر الخفيفة؛ لا يعزل النواة ولا يوحّد الأنظمة المضيفة. |
+| حالات المشروع على القرص | **USEFUL WITH ADAPTATION** | ممتاز للتفتيش، يحتاج تنسيقًا للوصول المتزامن. |
+| البحث الشجري (MCTS) عن مسار إصلاح | **USEFUL WITH ADAPTATION** | فعّال للحالات المستعصية، مكلف كمسار افتراضي. |
+| تمثيل بنيوي للبرنامج (AST/Scopes) | **USEFUL WITH ADAPTATION** | يحتاج محلّلات متعددة اللغات لتغطية مشاريع QEVION. |
+| SBFL (توطين قائم على التنفيذ) | **USEFUL WITH ADAPTATION** | مشروط بوجود اختبارات قابلة للتشغيل سريعًا. |
+| تفويض Runtimes (gVisor/Kata) عبر RuntimeClass | **USEFUL WITH ADAPTATION** | قوي لكنه يفترض منصة K8s ناضجة. |
+| CaMeL (عزل تدفق التحكّم + Capabilities) | **USEFUL WITH ADAPTATION** | الصواب مبدئيًا، لكنه إعادة هيكلة لطبقة النموذج + ضريبة نجاح. |
+| تدفق Change Request + موافقة قبل الدمج | **USEFUL WITH ADAPTATION** | نمط ممتاز؛ يحتاج ربطًا بسجل القدرات لا كسير عمل منفصل. |
+| WebContainers للاستعراض | **USEFUL WITH ADAPTATION** | سريع جدًا للتجربة لكن قيود ترخيص تجاري + محاكاة لا نظام حقيقي. |
+| Snapshots / Time Travel | **USEFUL WITH ADAPTATION** | قيمة تصحيحية عالية؛ تكلفة تخزين وعقد تناسق. |
+| تقييم خصومي لحقن الأوامر (AgentDojo) | **USEFUL WITH ADAPTATION** | يجب تبنّي **منهجية** مجموعة اختبارات هجوم لا الأرقام. |
+| Swarm / تعاون مع ذاكرة مشتركة | **NOT CURRENTLY NEEDED** | تعقيد تدقيق مرتفع قبل استقرار الأساس أحادي الوكلاء. |
+| Graph orchestration يدوي | **NOT CURRENTLY NEEDED** | يجب أن تُولَّد الرسوم من سجل القدرات؛ كتابتها يدويًا تُنتج دَينًا معماريًا. |
+| تخزين الحالة في Postgres فقط (نمط DBOS) | **NOT CURRENTLY NEEDED** | مرهون بمعمارية تخزين QEVION؛ لا تفرضه الأدبيات. |
+| تنفيذ كامل داخل المتصفح | **NOT CURRENTLY NEEDED** | لا يحقّق شروط العزل/التدقيق المطلوبة، وقيود ترخيص. |
+| «التوليد الكامل بسطر واحد» | **CONFLICTS WITH QEVION** | يناقض مبدأ مراحل الاكتشاف/التخطيط/العقود/التحقق. |
+| تعديل المستودع مباشرةً على الفرع الرئيسي | **CONFLICTS WITH QEVION** | يلغي إمكان Rollback وبوابات الموافقة. |
+| تخطيط حر يقرر النموذج فيه كل خطوة | **CONFLICTS WITH QEVION** | يصادم قابلية التكرار والتدقيق وسجل القدرات. |
+| ربط النموذج بأدوات حقيقية بلا بروكسي اعتماد | **CONFLICTS WITH QEVION** | أسرار طويلة العمر في متناول توليد غير موثوق. |
+| التوجيه الواعي بالقدرة (Capability-Aware Routing) | **INSUFFICIENT EVIDENCE** | لا معيار مفتوح يربط نوع المهمة بقدرة النموذج؛ الأرقام المنشورة ظرفية. |
+| ادعاءات «وكيل يبني شركتك» للبناة التجارية | **INSUFFICIENT EVIDENCE** | ادعاءات تسويقية بلا تفاصيل معمارية قابلة للتحقق. |
+| مقاييس SWE-bench كإثبات قدرة | **INSUFFICIENT EVIDENCE** | تلوّث موثّق (>94% قبل القطع؛ 76% مقابل 53%). |
+
+**توزيع التصنيفات (عدّ):** DIRECTLY USEFUL = 20، USEFUL WITH ADAPTATION = 11، NOT CURRENTLY NEEDED = 4، CONFLICTS = 4، INSUFFICIENT EVIDENCE = 3.
+
+---
+
+## 6. مُدخلات مقترحة لمعمار مصنع تطبيقات QEVION
+
+> هذا القسم **مقترح** لا قرار. كل بند موسوم `[دليل]` أو `[استنتاج هندسي]`.
+
+### 6.1 الاكتشاف والفهم (Discovery & Understanding)
+`[دليل]` استخدم تمثيلًا بنيويًا (AST/نطاقات) + توطينًا هرميًا + فهرسًا متجهيًا محدَّثًا (AutoCodeRover، Agentless، Moatless).
+`[استنتاج هندسي]` أضف طبقة لا توجد في أي نظام تم فحصه: **مستودع قدرات المشروع (Capability Manifest)** يُستخرج من المستودع قبل التخطيط — لأن QEVION يعمل بعقود قدرات لا بملفات فقط. أي خطة بلا Manifest يجب أن تُرفض قبل التنفيذ.
+
+### 6.2 التخطيط (Planning)
+`[دليل]` نمط Agentless يثبت أن فصل «التوطين» عن «الإصلاح» يُنتج نتيجة أفضل من حلقة حرة (arXiv:2407.01489v2). ADK يثبت أن تدفقًا حتميًا قابل للاختبار ممكن.
+`[استنتاج هندسي]` التسلسل المقترح: `Discovery → Manifest → Plan(DAG) → Capability Resolution → Contract-bound Execution`. اجعل الـDAG مَخرَجًا **قابلًا للتفتيش** ومُخزَّنًا، لا نصًّا في سياق النموذج.
+
+### 6.3 تنفيذ البناء (Build Execution)
+`[دليل]` العزل: srt للأوامر الخفيفة، K8s Agent Sandbox بحالة دائمة للجلسات الكاملة، تفويض العزل لـgVisor/Kata.
+`[دليل]` كل فعل تنفيذ يجب أن يمرّ ببوابة سياسة: MCP يفرض per-client consent، وCaMeL يفصل تدفق التحكّم.
+`[استنتاج هندسي]` اجعل «كل أداة» عقدًا مُسجَّلًا (Capability)، لا دالة يستدعيها النموذج مباشرةً. هذا هو الفرق الجوهري بين مصنع تطبيقات QEVION وأي وكيل برمجة آخر.
+
+### 6.4 التحقق (Verification)
+`[دليل]` تحقق متعدد الطبقات: بناء + أنواع + اختبارات وحدة + اختبارات عقد + تحقق بصري (Onlook/bolt.diy) + تحقق سلوكي.
+`[استنتاج هندسي]` أضف **تحققًا تفاضليًا (Differential Verification)**: قارن سلوك المُخرَج قبل/بعد رقعة الوكيل — لأن «نجاح الاختبارات» غير كافٍ (تلوّث المعايير موثّق).
+
+### 6.5 الأمان (Safety)
+`[دليل]` منع افتراضي للشبكة + قائمة سماح عبر بروكسي، مسارات كتابة بأسبقية المنع، رفض عناوين metadata، بوابات موافقة لكل عميل، نسبة المخالفات لكل أمر.
+`[استنتاج هندسي]` اعتمد بروكسي اعتماد (Credential Broker) بتوكنات قصيرة العمر بدل حقن الأسرار في البيئة. لا يوجد نظام مفتوح تم فحصه يقدّم هذا كاملًا — تُعامل كفجوة تشغّلها QEVION داخليًا.
+
+### 6.6 الحالة والاستئناف (State & Recovery)
+`[دليل]` سجل أحداث + إعادة تشغيل + idempotency + تعليق/استئناف + ترقيع الإصدارات (Temporal/Restate/DBOS/Inngest).
+`[استنتاج هندسي]` صنّف الأخطاء لثلاث طبقات معالجة: (1) خطأ عابر → إعادة محاولة بتراجع أسّي؛ (2) خطأ حتمي → تصنيف + تخطيط محلي مُعاد؛ (3) خطأ نطاق/سياسة → توقف وتصعيد لإنسان. لا تخلطها في حلقة واحدة.
+
+### 6.7 الإثبات (Provenance)
+`[دليل]` Event History (Temporal) + Violation Attribution (srt) + Task/Artifact events (A2A) + SBOM (CycloneDX/SPDX) + SLSA/in-toto/Sigstore للتوقيع + OTel GenAI للتتبّع.
+`[استنتاج هندسي]` يجب أن يكون البيان النهائي قابلًا لإعادة الإنتاج: **تثبيت النسخة (تجزئة المستودع + إصدار الأدوات + seed + مزوّد/نموذج)**، وإلا فلن يكون «دليلًا» بالمعنى الهندسي بل سجلًّا سرديًا.
+
+### 6.8 تعدد الوكلاء والمخرج المستقل (Multi-Agent & Independent Output)
+`[دليل]` ابدأ بـagents-as-tools (Strands)، وأضف مشارِكًا/مراجِعًا كـVerifier مستقل يستهلك نفس سجل الأحداث. وتدفق Change Request (Suna) نموذج لبوابة الاستقلال.
+`[استنتاج هندسي]` «نواة QEVION الجديدة المستقلة» يجب أن تُنتَج كـ**مستودع مستقل بتبعيات مُثبَّتة واختبارات عقد ناجحة وسجل بناء** — أي أن شرط القبول ليس «الكود يعمل» بل «المخرج قابل للبناء والتحقق والتوقيع خارج بيئة المصنع».
+
+---
+
+## 7. ما يجب ألّا ننسخه (What NOT To Copy)
+
+| النمط | لماذا يبدو جاذبًا | لماذا غير مناسب لـQEVION | الدليل |
+|---|---|---|---|
+| **حلقة وكيل حرّة طويلة بلا حدود** | تُظهر مرونة عالية في عروض تجريبية | لا قابلية تكرار ولا تدقيق؛ أخطاء عدم الحتمية تُفسد إعادة التشغيل؛ الفشل يتراكم مع الطول | arXiv:2503.14499، `docs.temporal.io/workflows` (متطلب الحتمية) |
+| **الاعتماد على نتائج SWE-bench كإثبات جاهزية** | أرقام عالية تعطي انطباع جاهزية | تلوّث موثّق: >94% مسائل قبل القطع، و76% تحديد ملف من نص المسألة | arXiv:2410.06992، arXiv:2506.12286، arXiv:2505.20411، arXiv:2505.23419 |
+| **الكتابة مباشرةً على الفرع الرئيسي** | يقلل الاحتكاك | يُلغي Rollback وبوابات الموافقة والإثبات | README Suna (Change Request قبل الدمج) |
+| **بيئة تنفيذ كاملة داخل المتصفح كخيار عزل** | بدء فوري بلا بنية تحتية | لا يحقق عزلًا حقيقيًا للتدقيق؛ قيود ترخيص تجاري | README bolt.diy |
+| **Swarm بذاكرة عمل مشتركة مبكرًا** | «تعاون» يبدو قويًا | مسار تدقيق ضبابي وحالات سباق؛ كلفة تصحيح مرتفعة | توثيق Strands Swarm (سياق مشترك) |
+| **العزل بالحاوية فقط للتنفيذ غير الموثوق** | مألوف ومريح | الحاوية تشترك نواة المضيف؛ المشاريع الجدّية تفوّض لـgVisor/Kata | README agent-sandbox (نطاق «مُنظِّم» + RuntimeClass) |
+| **قائمة منع أوامر (denylist) بدل قائمة سماح** | أسهل كتابةً | denylist تُخترق بالمراوغة والترميز؛ srt يبني الشبكة على allow-only صريح | README sandbox-runtime |
+| **الاعتماد على تعليمات النموذج للالتزام بالسياسة** | صفر تكلفة تنفيذية | «تحصين الأوامر» لا يُثبت شيئًا؛ CaMeL يفصل التحكّم بنيويًا | arXiv:2503.18813 |
+| **سلاسل توليد طويلة بلا تحقق وسيط** | تبدو أنها «تُنجز أكثر» | الخطأ المعماري المبكر يتراكم ويستحيل تصحيحه لاحقًا | مبدأ التحقق بالبناء/الاختبار في Agentless وAutoCodeRover |
+| **تطبيق SLSA كما هو على مخرجات LLM** | يمنح مظهر «سلسلة توريد نظيفة» | SLSA يفترض خط بناء معرَّفًا؛ سلوك النموذج غير حتمي، فالبيان يجب أن يوثّق «الوصفة + الأثر» لا البناء فقط | slsa.dev/spec/v1.0/provenance |
+| **تخطيط بلا نمذجة القدرات** | شائع في الأدوات الحالية | QEVION عقودي؛ التخطيط بلا Capability Manifest يُنتج رقعًا «تقنية صحيحة ومعماريًا خاطئة» | `[استنتاج هندسي]` مبني على فجوة §8 |
+| **تثبيت نسخ التبعيات بالتخمين من النموذج** | يسرّع التوليد | مصدر مباشر لسلسلة توريد مخترقة وقابلية بناء مفقودة | CycloneDX/SPDX + مخاطر Dependency Confusion |
+
+---
+
+## 8. الفجوات الحقيقية في الأنظمة مفتوحة المصدر (Gaps)
+
+1. **الموثوقية على الأفق الطويل**: `[دليل]` الأفق الذي ينجح فيه الوكيل 50% من الوقت يتضاعف كل ~7 أشهر (o3 ≈ 110 دقيقة)، والمؤلفون يحذّرون من التعميم على هندسة برمجيات واقعية (arXiv:2503.14499). عمليًا: لا نظام مفتوح يقدّم «استئنافًا مضمونًا بعد أسبوع».
+2. **الصحة المعمارية (Architectural Correctness)**: `[دليل]` جميع المعايير المفحوصة تقيس «هل مرّت الاختبارات؟» لا «هل التغيير متوافق مع تصميم النظام؟». `[استنتاج هندسي]` لا آلية واحدة استُعرضت تُنتج بيان أثر معماري (Architecture Impact Statement) — وهي فجوة حاسمة لمصنع تطبيقات يحترم عقودًا.
+3. **جودة التحقق والتحيّز المعياري**: `[دليل]` 76% تحديد ملف من النص وحده على Verified مقابل 53% خارج المعيار (arXiv:2506.12286)؛ و>94% قبل القطع (arXiv:2410.06992). `[استنتاج هندسي]` أي تقييم داخلي ثابت زمنيًا سيتلوّث بنفس الطريقة، فيلزم معيار متجدّد داخليًا.
+4. **الأمان في الاستقلالية**: `[دليل]` حتى أداة عزل ناضجة مثل srt توثّق أن خيارًا واحدًا (`allowAppleEvents`) **يُلغي عزل تنفيذ الكود**، وآخر (`enableWeakerNetworkIsolation`) يفتح مسار تسريب؛ وتوصي بعدم أخذ الإعدادات من مستودع مُستنسخ. `[استنتاج هندسي]` أي «مصنع تطبيقات» يقرأ إعدادات من مستودع يُنتِجه بنفسه = يتيح للمستودع المُنتَج أن يرفع صلاحيات مولّده. لا نظام مفتوح يمنع هذا بنيويًا.
+5. **الصحة على مستوى التطبيق (Application-Level Correctness)**: `[دليل]` بناة التطبيقات الموثّقة تعتمد حلقات «أخطاء البناء → تعديل»؛ لا واحدة توثّق ضمانات لصحة الواجهة↔الخلفية↔قاعدة البيانات، ولا سلوك وقت التشغيل تحت ضغط.
+6. **سلسلة التوريد للمخرجات المُولَّدة**: `[دليل]` مواصفات SBOM وSLSA موجودة، لكن لا مشروع من المفحوص يربط «هذا التطبيق المُولَّد استخدم هذه التبعيات بهذه الأسباب، وتم توقيع البيان». فجوة حقيقية في السوق المفتوح.
+7. **الأدلة القابلة لإعادة الإنتاج**: `[دليل]` Temporal/Restate يوفّران إعادة بناء الحالة، لكن إعادة إنتاج **توليد** (نفس الحالة → نفس المخرَج) غير ممكنة مع نماذج LLM غير الحتمية. `[استنتاج هندسي]` استبدل التوقّع بالحتمية بالتوقّع بالتحقق: بيان يُثبت أن المخرَج **قابل للبناء والتحقق** لا أنه **مُعاد إنتاجه حرفيًا**.
+8. **التزامات التكلفة على الأفق الطويل**: `[دليل]` تكلفة مهمة واحدة في Agentless ≈ $0.70 مقابل مهام متعددة الأيام — أي أن التكلفة اللوغاريتمية للمهام الطويلة غير مُنمَّذة، ولا يوجد توثيق لتخطيط ميزانية على مدى أسابيع.
+
+---
+
+## 9. معمار مركّب مقترح (Candidate Combined Architecture)
+
+> ليس قرارًا نهائيًا، ولا تدّعي هذه الوثيقة أن البحث يُثبت تصميمًا واحدًا. الفصل أدناه صريح بين الحقائق والتركيب والاستنتاج والأسئلة المفتوحة.
+
+### 9.1 حقائق مدعومة بالمصادر
+`[دليل]` (1) يمكن فصل التوطين عن الإصلاح والحصول على أداء أعلى بتكلفة أقل (Agentless). (2) يمكن بناء حالات طويلة قابلة للاستئناف بإعادة تشغيل حتمية (Temporal/Restate/DBOS/Inngest). (3) يمكن عزل عملي بلا حاويات عبر Seatbelt/bubblewrap مع بروكسي قائمة سماح ورفض metadata (srt). (4) يوجد معيار مفتوح لوصف الوكيل ومخرجاته (A2A) وآخر لوصف أدواته وموافقاته (MCP). (5) يمكن فرض سياسة دون لمس منطق الوكيل عبر نقاط اعتراض (ADK Callbacks). (6) يمكن فرض عزل تدفق التحكّم وCapabilities بضريبة ≈7 نقاط نجاح (CaMeL). (7) يمكن التوجيه بين المزوّدين بإسقاط فشل وميزانية (LiteLLM). (8) يمكن إنتاج إثبات موقّع إذا وُثِّق خط البناء (SLSA/in-toto/Sigstore). (9) درجات المعايير الحالية مشوّشة وتحتاج معيارًا متجددًا.
+
+### 9.2 تركيب مقترح (طبقات) `[سynthesis]`
+```
+[1] Intake المتطلبات
+      └─ عقد قدرات مستهدف (Target Capability Contract)
+[2] Discovery Layer      : AST/Scopes + فهرس متجهي + بحث رمزي
+      └─ مخرَج: Repository Inventory + Dependency Graph + Capability Manifest
+[3] Planning Layer       : DAG قابل للتفتيش (حتمي الهيكل، قرار داخل العقد)
+      └─ عقد لكل خطوة: المدخلات، الأثر المتوقّع، معيار القبول
+[4] Execution Layer      : Agent Runtime داخل Sandbox لكل جلسة
+      ├─ Sandbox: هوية ثابتة + تخزين دائم + pause/resume (نمط agent-sandbox)
+      ├─ Egress: منع افتراضي + قائمة سماح عبر بروكسي + رفض عناوين metadata
+      ├─ Filesystem: deny-wins للكتابة + denyRead للأسرار
+      └─ Tools: كل أداة = Capability مُسجَّلة خلف بوابة سياسة (لا استدعاء مباشر)
+[5] Durability Layer     : Event History + Replay + Idempotency + Versioning
+      ├─ كل فعل = حدث موقّع في السجل
+      └─ كل أثر خارجي = مفتاح عدم تكرار
+[6] Verification Layer   : Build → Type → Unit → Contract → Visual → Differential
+      └─ Verifier مستقل يستهلك سجل الأحداث لا سياق الوكيل
+[7] Evidence Layer       : Task/Artifact (A2A) + Violations (srt-style)
+      + SBOM (CycloneDX/SPDX) + Provenance موقّع + Spans (OTel GenAI)
+[8] Provider Layer       : توجيه بالتكلفة/الزمن/التقييد + Fallbacks + ميزانية
+[9] Gates                : Approval Gate لكل عميل + Policy Gate لكل أداة + Promotion Gate للإصدار
+```
+`[استنتاج هندسي]` الطبقة 2 (Capability Manifest) والطبقة 6 (Differential Verification) والطبقة 9 (Promotion Gate) **لا توجد جاهزة في أي نظام مفحوص**؛ يجب بناؤها. والطبقات 5 و7 يمكن تبنيها من أطر قائمة أكثر مما يمكن اختراعها.
+
+### 9.3 أسئلة غير محسومة (Unresolved)
+- `[غير محسوم]` ما حدّ الحتمية المطلوب في طبقة التخطيط لضمان إعادة تشغيل سليمة مع نماذج LLM؟ (Temporal يفرض الحتمية على الكود، لا على قرار النموذج.)
+- `[غير محسوم]` كيف تُثبَّت تبعيات مشروع مُولَّد بلا إدخال بشري؟ (الأدبيات غير كافية؛ الحل المرجّح: قائمة سماح + قفل إصدارات إلزامي.)
+- `[غير محسوم]` ما معيار القبول لـ«نواة QEVION جديدة مستقلة»؟ لا يوجد مرجع خارجي؛ يجب تعريفه داخليًا (اختبارات عقد + بناء نظيف + توقيع).
+- `[غير محسوم]` أثر ضريبة CaMeL (≈7 نقاط) على مهام التوليد الطويلة غير مقيس خارج AgentDojo.
+
+---
+
+## 10. قائمة القراءة ذات الأولوية (Priority Reading List)
+
+1. **Agentless — arXiv:2407.01489** (خصوصًا الملحق التفصيلي): يوضّح بالأرقام ما الذي يُنجزه الفصل الصريح بين التوطين والإصلاح، وهو أرخص درس معماري في القائمة.
+2. **Temporal — `docs.temporal.io/workflows` + `develop/python/workflows/versioning`**: المصدر المباشر لنمط «سجل أحداث + إعادة تشغيل + ترقيع إصدارات» الذي سيشكّل عمود QEVION الفقري للحالة والاستئناف.
+3. **Restate — `docs.restate.dev/develop/ts/durable-steps` + `/guides/request-lifecycle`**: أبسط صياغة مفهومة للـJournal والاستئناف ومفاتيح عدم التكرار، مفيدة للاتفاق الداخلي على المصطلحات.
+4. **anthropics/sandbox-runtime — README**: أعمق نموذج عملي مستند إلى كود لتحويل «الحدود الأمنية» إلى قيم قابلة للتهيئة، بما فيها تحذيرات فشل العزل الصريحة.
+5. **kubernetes-sigs/agent-sandbox — README + roadmap.md**: المرجع لتحويل العزل والحالة إلى عقد مُدار (CRD) مع دورة حياة وتجمّع دافئ.
+6. **MCP Security Best Practices — `modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices`**: قائمة الثغرات المسماة (Confused Deputy، Token Passthrough، Session Hijacking) هي بالضبط اختبار اختراق لأي بوابة موافقة ستُبنى.
+7. **CaMeL — arXiv:2503.18813**: الدليل على أن الأمان بالبنية (لا بالتعليمات) ممكن، وأن ثمنه مقيس — وهو مطلوب لأن المصنع يعالج بيانات غير موثوقة.
+8. **METR — arXiv:2503.14499 + `metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/`**: الإطار الكمّي الوحيد الموثوق لتخطيط «الأفق الآمن» الذي يُسمح فيه للوكيل بالعمل دون رقابة بشرية.
+9. **SWE-bench family + SWE-Bench Illusion — arXiv:2506.12286 و2410.06992 و2505.23419**: لبناء ثقافة شكّ تجاه الأرقام، ولتصميم معيار QEVION الداخلي كمعيار متجدّد.
+10. **Google ADK workflow-agents + Strands multi-agent docs**: نماذج عملية للتنسيق الحتمي والتصعيد التدريجي، ونقاط الاعتراض كنقاط سياسة.
+
+---
+
+## 11. الملحق (Appendix)
+
+### 11.1 جميع المستودعات والأوراق والوثائق المستشهد بها
+
+| # | العنصر | URL | النوع | الحالة |
+|---|---|---|---|---|
+| 1 | SWE-bench | https://github.com/SWE-bench/SWE-bench | مستودع | فعّال |
+| 2 | SWE-bench paper | https://arxiv.org/abs/2310.06770 | ورقة | منشورة |
+| 3 | SWE-bench Multimodal | https://arxiv.org/abs/2410.03859 | ورقة | منشورة |
+| 4 | SWE-bench Goes Live | https://arxiv.org/abs/2505.23419 | ورقة | منشورة |
+| 5 | SWE-Bench+ | https://arxiv.org/abs/2410.06992 | ورقة | منشورة |
+| 6 | SWE-rebench | https://arxiv.org/abs/2505.20411 | ورقة | منشورة |
+| 7 | SWE-smith | https://github.com/SWE-bench/SWE-smith | مستودع | فعّال |
+| 8 | AutoCodeRover (repo) | https://github.com/AutoCodeRoverSG/auto-code-rover | مستودع | مُصان |
+| 9 | AutoCodeRover (paper) | https://arxiv.org/abs/2404.05427 | ورقة | منشورة |
+| 10 | Agentless (repo) | https://github.com/OpenAutoCoder/Agentless | مستودع | مُصان |
+| 11 | Agentless (paper) | https://arxiv.org/abs/2407.01489 | ورقة | منشورة |
+| 12 | Moatless Tools | https://github.com/aorwall/moatless-tools | مستودع | فعّال |
+| 13 | moatless-tree-search | https://github.com/aorwall/moatless-tree-search | مستودع | فعّال |
+| 14 | SWE-Search | https://arxiv.org/abs/2410.20285 | ورقة | منشورة |
+| 15 | Temporal Workflows | https://docs.temporal.io/workflows | وثيقة | فعّالة |
+| 16 | Temporal Versioning | https://docs.temporal.io/develop/python/workflows/versioning | وثيقة | فعّالة |
+| 17 | Restate Durable Steps | https://docs.restate.dev/develop/ts/durable-steps | وثيقة | فعّالة |
+| 18 | Restate Request Lifecycle | https://docs.restate.dev/guides/request-lifecycle | وثيقة | فعّالة |
+| 19 | DBOS Architecture | https://docs.dbos.dev/architecture | وثيقة | فعّالة |
+| 20 | DBOS vs Temporal | https://docs.dbos.dev/explanations/comparing-temporal | وثيقة | فعّالة |
+| 21 | Inngest Steps | https://www.inngest.com/docs/learn/inngest-steps | وثيقة | فعّالة |
+| 22 | Inngest Checkpointing | https://www.inngest.com/docs/setup/checkpointing | وثيقة | فعّالة |
+| 23 | Google ADK | https://github.com/google/adk-python | مستودع | فعّال (v2.9.1) |
+| 24 | ADK Workflow Agents | https://github.com/google/adk-docs/blob/main/docs/agents/workflow-agents/index.md | وثيقة | فعّالة |
+| 25 | ADK Architecture Overview | https://github.com/google/adk-python/blob/main/contributing/adk_project_overview_and_architecture.md | وثيقة | فعّالة |
+| 26 | AWS Strands SDK | https://github.com/strands-agents/sdk-python | مستودع | فعّال |
+| 27 | Strands Swarm | https://strandsagents.com/docs/user-guide/concepts/multi-agent/swarm/ | وثيقة | فعّالة |
+| 28 | Strands Session Management | https://strandsagents.com/docs/user-guide/concepts/session-management/ | وثيقة | فعّالة |
+| 29 | Strands Observability | https://strandsagents.com/docs/user-guide/observability/ | وثيقة | فعّالة |
+| 30 | Mastra | https://github.com/mastra-ai/mastra | مستودع | فعّال |
+| 31 | Dapr Agents | https://github.com/dapr/dapr-agents | مستودع | فعّال `[تقارير ثانوية]` |
+| 32 | MCP Spec | https://modelcontextprotocol.io/specification/2025-06-18 | مواصفة | قياسية |
+| 33 | MCP Security Best Practices | https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices | مواصفة | قياسية |
+| 34 | A2A Specification | https://a2a-protocol.org/latest/specification/ | مواصفة | قياسية |
+| 35 | anthropics/sandbox-runtime | https://github.com/anthropics/sandbox-runtime | مستودع | فعّال |
+| 36 | Kubernetes Agent Sandbox | https://github.com/kubernetes-sigs/agent-sandbox | مستودع | فعّال (Apache-2.0) |
+| 37 | Agent Sandbox Docs | https://agent-sandbox.sigs.k8s.io/docs/ | وثيقة | فعّالة |
+| 38 | CaMeL (paper) | https://arxiv.org/abs/2503.18813 | ورقة | منشورة (v2) |
+| 39 | CaMeL (code) | https://github.com/google-research/camel-prompt-injection | مستودع | منشور |
+| 40 | LiteLLM Routing | https://docs.litellm.ai/docs/routing | وثيقة | فعّالة |
+| 41 | bolt.diy | https://github.com/stackblitz-labs/bolt.diy | مستودع | فعّال (MIT) |
+| 42 | Dyad | https://github.com/dyad-sh/dyad | مستودع | فعّال |
+| 43 | Suna (Kortix) | https://github.com/kortix-ai/suna | مستودع | فعّال |
+| 44 | Suna sandbox path | https://github.com/kortix-ai/suna/tree/main/backend/core/sandbox | كود | فعّال |
+| 45 | E2B Fragments | https://github.com/e2b-dev/fragments | مستودع | فعّال |
+| 46 | Onlook | https://github.com/onlook-dev/onlook | مستودع | فعّال |
+| 47 | Wasp OpenSaaS | https://github.com/wasp-lang/open-saas | مستودع | فعّال |
+| 48 | METR paper | https://arxiv.org/abs/2503.14499 | ورقة | منشورة |
+| 49 | METR blog | https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/ | مدونة | منشورة |
+| 50 | SWE-Bench Illusion | https://arxiv.org/abs/2506.12286 | ورقة | منشورة |
+| 51 | SLSA Provenance | https://slsa.dev/spec/v1.0/provenance | مواصفة | قياسية |
+| 52 | in-toto | https://in-toto.io/ | مشروع | فعّال |
+| 53 | Sigstore Docs | https://docs.sigstore.dev/ | وثيقة | فعّالة |
+| 54 | CycloneDX | https://cyclonedx.org/specification/overview/ | مواصفة | قياسية |
+| 55 | SPDX | https://spdx.dev/ | مواصفة | قياسية |
+| 56 | OTel GenAI SemConv | https://opentelemetry.io/docs/specs/semconv/gen-ai/ | مواصفة | قياسية `[تقارير ثانوية]` |
+| 57 | Open Policy Agent | https://www.openpolicyagent.org/docs/latest/ | وثيقة | فعّالة |
+| 58 | AWS Cedar | https://docs.cedarpolicy.com/ | وثيقة | فعّالة |
+| 59 | HumanLayer | https://github.com/humanlayer/humanlayer | مستودع | فعّال `[تقارير ثانوية]` |
+
+### 11.2 ملاحظات على الجرد
+- **دلالة الحالة:** "فعّال" = نشاط/إصدارات حديثة أو توثيق حيّ؛ "مُصان" = إبقاء محدود لكن موجود؛ "ورقة" = المساهمة الفكرية متاحة دون ضمان دعم تشغيلي.
+- **ما لم يُتحقق منه مباشرة:** العناصر الموسومة `[تقارير ثانوية]` (Mastra، Dapr Agents، OTel GenAI، HumanLayer، Microsoft Agent Framework) — يُنصح بقراءتها من المستودع قبل الاعتماد عليها في قرار.
+- **ما استُبعد بسبب التكرار:** كل مشروع موجود في جدول المواقع الحالي (قائمة §2) لم يُدرج كـ«نتيجة بحثية» احترامًا لشرط عدم التكرار.
+
+### 11.3 ملاحظة على القيود التشغيلية
+التقرير بُني على مصادر عامة متاحة في تاريخه. الادعاءات المتعلقة بـ«الحالة الحالية» تتغيّر بسرعة في هذا المجال؛ وأي بند يُبنى عليه قرار معماري يجب إعادة التحقق منه من المستودع/الوثيقة الرسمية في وقت القرار، لا الاعتماد على هذه الصفحة.
+
+---
+
+## الجواب المباشر على السؤال النهائي
+
+**س: «إذا أرادت QEVION بناء مصنع تطبيقات قادر على توليد نواة QEVION جديدة مستقلة، فأي الآليات من الأنظمة مفتوحة المصدر قابلة لإعادة الاستخدام فعلًا، وأيها يحتاج تكييفًا، وأيها يجب رفضه؟»**
+
+**1) قابل لإعادة الاستخدام كما هو (مباشر):**
+سجل الأحداث + إعادة التشغيل + مفاتيح عدم التكرار + تعليق/استئناف + ترقيع الإصدارات (Temporal/Restate/DBOS/Inngest)؛ عزل الشبكة منع-افتراضي + قائمة سماح + رفض metadata + نسبة المخالفات لكل أمر (sandbox-runtime)؛ الصندوق الرملي كَمَورِد بحالة دائمة (K8s Agent Sandbox)؛ نقاط اعتراض ما قبل/بعد كي تكون سياسة (ADK)؛ نموذج Task/Artifact (A2A) وعقود الأدوات والموافقات (MCP)؛ التوجيه مع إسقاط الفشل والميزانية (LiteLLM)؛ التوطين الهرمي والتحقق بالاختبارات (Agentless/AutoCodeRover)؛ معيار متجدّد داخليًا بدل معيار ثابت؛ SBOM للمخرجات.
+
+**2) يحتاج تكييفًا:**
+SLSA/in-toto (وقّع الوصفة والأثر لا «البناء الحتمي»)؛ CaMeL (إعادة هيكلة طبقة النموذج + قياس ضرر النجاح)؛ SBFL (مشروط باختبارات سريعة)؛ MCTS (للحالات المستعصية فقط)؛ WebContainers (قيود ترخيص + محاكاة)؛ Snapshots؛ حالات على القرص بتزامن؛ تفويض gVisor/Kata.
+
+**3) يُرفَض:**
+الحلقات الحرة الطويلة بلا حتمية؛ الاعتماد على أرقام SWE-bench كإثبات جاهزية؛ الكتابة المباشرة على الفرع الرئيسي؛ استخدام المتصفح كخيار عزل؛ Swarm المبكر؛ الحاوية كطبقة العزل الوحيدة؛ قوائم المنع بدل قوائم السماح؛ تعليمات النموذج كوسيلة لفرض سياسة؛ التوليد الطويل بلا تحقق وسيط؛ تثبيت التبعيات بالتخمين.
+
+**4) ما يجب أن تبنيه QEVION بنفسها (لأنه غير موجود في أي نظام مفحوص):**
+مستودع القدرات (Capability Manifest) كشرط قبل التخطيط؛ التحقق التفاضلي؛ بوابة ترقية (Promotion Gate) لمشروع مستقل مُنتَج؛ ووكيل اعتماد (Credential Broker) بتوكنات قصيرة العمر.
+
+

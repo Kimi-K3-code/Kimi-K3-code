@@ -1,0 +1,4190 @@
+[
+  {
+    "row": 569,
+    "name": "ProWritingAid",
+    "current_url": "https://[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 614,
+    "name": "CrushOn AI",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 634,
+    "name": "Webex AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 635,
+    "name": "Krisp AI Accent",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 636,
+    "name": "DeepL Voice",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 638,
+    "name": "KUDO AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 649,
+    "name": "IPsoft Amelia",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 653,
+    "name": "Sensory Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 655,
+    "name": "Porcupine Wake Word",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 656,
+    "name": "Rhino Speech-to-Intent",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 662,
+    "name": "Sonantic",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 663,
+    "name": "XTTS (Coqui)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 666,
+    "name": "CosyVoice",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 667,
+    "name": "SenseVoice",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 668,
+    "name": "Axolotl",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 679,
+    "name": "Aporia",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 680,
+    "name": "Robust Intelligence",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 693,
+    "name": "Giskard Python",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 696,
+    "name": "Snorkel Flow",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 703,
+    "name": "Labelbox Annotate",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 706,
+    "name": "Iterative Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 707,
+    "name": "Aim Open",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 711,
+    "name": "Humanloop Prompt",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 712,
+    "name": "Vellum Prompt",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 713,
+    "name": "Promptlayer API",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 718,
+    "name": "Cross-Encoder",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 728,
+    "name": "Upstash Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 731,
+    "name": "Supabase Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 732,
+    "name": "DuckDB VSS",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 736,
+    "name": "Aerospike Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 740,
+    "name": "Redis Enterprise Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 747,
+    "name": "TerminusDB",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 752,
+    "name": "Dgraph",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 760,
+    "name": "Oracle Cloud Generative AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 764,
+    "name": "Workday AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 767,
+    "name": "Monday.com AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 769,
+    "name": "Notion Sites",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 772,
+    "name": "XMind Copilot",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 774,
+    "name": "Mural AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 802,
+    "name": "Google Colab Enterprise",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 809,
+    "name": "Great Expectations Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 817,
+    "name": "Amundsen",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 825,
+    "name": "Upstash QStash",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 835,
+    "name": "Hue",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 878,
+    "name": "Firebase Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 879,
+    "name": "Orca Minecraft",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 880,
+    "name": "JetBrains Air",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 885,
+    "name": "Ona Systems",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 888,
+    "name": "Orca ADE",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 896,
+    "name": "Feishi (非十)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 910,
+    "name": "AmpCode",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 918,
+    "name": "Happy Coder",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 921,
+    "name": "Codeium Chat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 922,
+    "name": "CodiumAI PR-Agent",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 933,
+    "name": "Fig AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 934,
+    "name": "Mutable AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 938,
+    "name": "CodeGeeX Extension",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 939,
+    "name": "Blackbox Code Search",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 940,
+    "name": "Phind Developer Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 942,
+    "name": "YouCode",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 950,
+    "name": "DuckAssist",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 963,
+    "name": "Paraphrase Online",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 970,
+    "name": "GPTZero Detector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 971,
+    "name": "ZeroGPT Detector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 974,
+    "name": "Crossplag Detector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 985,
+    "name": "Sentinel AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 989,
+    "name": "PlayHT Voice Cloner",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 991,
+    "name": "Voice.ai Free",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 995,
+    "name": "Moises Web",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1006,
+    "name": "Amper Music Legacy",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1008,
+    "name": "Beatoven Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1016,
+    "name": "Pika Art Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1019,
+    "name": "Haiper Video Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1021,
+    "name": "Glhf Chat Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1027,
+    "name": "SenseNova Portal",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1031,
+    "name": "Baseten Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1032,
+    "name": "RunPod GPU Pods",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1034,
+    "name": "Cerebrium Endpoints",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1035,
+    "name": "Beam Serverless",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1036,
+    "name": "TensorDock Core",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1039,
+    "name": "Predibase LoRAX",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1040,
+    "name": "OctoAI Compute",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1043,
+    "name": "Hyperbolic Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1044,
+    "name": "Upstage Document AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1046,
+    "name": "Fiddler Explainable AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1047,
+    "name": "Cleanlab Data Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1048,
+    "name": "Arize Observability",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1049,
+    "name": "Agenta Prompt Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1050,
+    "name": "Vellum Workflow Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1051,
+    "name": "Promptlayer Analytics",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1052,
+    "name": "Lunary Analytics",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1053,
+    "name": "Braintrust Datasets",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1054,
+    "name": "Outlines Formats",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1055,
+    "name": "Marvin Functions",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1056,
+    "name": "Mirascope Providers",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1057,
+    "name": "Phidata Tool Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1058,
+    "name": "Mem0 Graph Memory",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1059,
+    "name": "Zep Memory Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1060,
+    "name": "Letta Agent Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1061,
+    "name": "FastGPT Workflow",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1068,
+    "name": "OpenHands Dev",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1070,
+    "name": "Codebuff CLI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1071,
+    "name": "Bito Copilot",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1072,
+    "name": "Fenno Git Agent",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1073,
+    "name": "Codegen Core",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1076,
+    "name": "MarsCode IDE",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1077,
+    "name": "Cosine Genie Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1078,
+    "name": "GoCodeo Tester",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1079,
+    "name": "Firebender Android",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1080,
+    "name": "Syntha Code",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1081,
+    "name": "Vorflux PR Builder",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1082,
+    "name": "CodeMate Suite",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1083,
+    "name": "Code Snippets Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1084,
+    "name": "Zerve Data Science",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1085,
+    "name": "Open Interpreter Web",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1086,
+    "name": "Dreamflow Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1087,
+    "name": "Unblocked Context",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1088,
+    "name": "JS2TS Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1090,
+    "name": "Speechmatics Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1093,
+    "name": "Fathom Video Notetaker",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1099,
+    "name": "Phind Instant AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1100,
+    "name": "YouChat Search",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1103,
+    "name": "Lovable App Builder",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1105,
+    "name": "Qodo TestGen",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1106,
+    "name": "Mintlify Docs",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1107,
+    "name": "Readme Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1108,
+    "name": "Postman AI Agent",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1110,
+    "name": "Turso SQLite Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1111,
+    "name": "Convex Reactive Backend",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1112,
+    "name": "AgentOps Dashboard",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1116,
+    "name": "Morph Cloud Sandbox",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1118,
+    "name": "ZenML Pipelines",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1121,
+    "name": "DVC Studio Pro",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1122,
+    "name": "ClearML Hosted",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1124,
+    "name": "Neptune.ai Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1125,
+    "name": "AimStack Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1128,
+    "name": "Giskard Testing",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1129,
+    "name": "Parea Monitoring",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1130,
+    "name": "Scale Data Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1131,
+    "name": "SuperAnnotate Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1132,
+    "name": "V7 Darwin Vision",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1134,
+    "name": "CVAT Hosted",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1137,
+    "name": "DagsHub Repos",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1141,
+    "name": "Taipy GUI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1143,
+    "name": "Reflex Web Apps",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1144,
+    "name": "NiceGUI Core",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1145,
+    "name": "Textual TUI Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1147,
+    "name": "Meilisearch Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1149,
+    "name": "Vespa Vector Search",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1150,
+    "name": "LanceDB Serverless",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1156,
+    "name": "Upstash Vector DB",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1161,
+    "name": "SingleStore Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1164,
+    "name": "KeyDB Open",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1165,
+    "name": "Valkey In-Memory",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1168,
+    "name": "ArangoDB Graph Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1169,
+    "name": "NebulaGraph AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1170,
+    "name": "TigerGraph AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1171,
+    "name": "Amazon Neptune Analytics",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1175,
+    "name": "ServiceNow Assist",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1176,
+    "name": "Monday.com AI Assistant",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1178,
+    "name": "Creately Visual AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1179,
+    "name": "GLHF Chat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1182,
+    "name": "FreeGPT",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1183,
+    "name": "Blackbox Web",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1187,
+    "name": "AiChatOS",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1188,
+    "name": "ChatLlama",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1189,
+    "name": "Phind Search",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1190,
+    "name": "YouChat AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1191,
+    "name": "Perax AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1196,
+    "name": "Hyperbolic Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1197,
+    "name": "SambaNova Playground",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1198,
+    "name": "Lepton AI Playground",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1199,
+    "name": "OctoAI Endpoints",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1205,
+    "name": "Mistral Le Chat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1222,
+    "name": "TensorRT-LLM NVIDIA",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1223,
+    "name": "Triton Inference Server",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1225,
+    "name": "TorchServe PyTorch",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1227,
+    "name": "Lambda GPU Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1228,
+    "name": "Scaleway Managed Inference",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1231,
+    "name": "RouteLLM LMSYS",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1236,
+    "name": "LMSYS Chatbot Arena",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1241,
+    "name": "LanguageTool AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1243,
+    "name": "OtterPilot",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1245,
+    "name": "Fathom Assistant",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1246,
+    "name": "Krisp Voice AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1247,
+    "name": "Superhuman AI Mail",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1251,
+    "name": "Reflect AI Notes",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1252,
+    "name": "Capacities AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1253,
+    "name": "Anytype Space",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1254,
+    "name": "Tana Commands",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1255,
+    "name": "Gamma Presentation",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1257,
+    "name": "Tome Storytelling",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1258,
+    "name": "Decktopus AI Pro",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1259,
+    "name": "Pitch Presentation AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1260,
+    "name": "SlidesAI Generator",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1262,
+    "name": "Adobe Firefly Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1263,
+    "name": "Recraft Vector AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1264,
+    "name": "Ideogram Generator",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1265,
+    "name": "Leonardo Canvas",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1267,
+    "name": "Magnific Upscaler",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1271,
+    "name": "TensorArt Generator",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1272,
+    "name": "SeaArt Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1273,
+    "name": "Soundraw Music",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1274,
+    "name": "Beatoven Music Maker",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1275,
+    "name": "ElevenLabs Reader",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1276,
+    "name": "Speechify Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1277,
+    "name": "PlayHT Voice Agent",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1278,
+    "name": "Podcastle Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1279,
+    "name": "Descript Editor",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1284,
+    "name": "Captions App",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1287,
+    "name": "Runway Gen-2",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1288,
+    "name": "Pika Video",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1292,
+    "name": "Meshy 3D Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1296,
+    "name": "Kiri Engine Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1299,
+    "name": "Blockade Skybox",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1311,
+    "name": "Letta Agent OS",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1316,
+    "name": "Giskard QA",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1320,
+    "name": "Bright Data AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1324,
+    "name": "Riverside Magic Clips",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1328,
+    "name": "Backblaze B2 AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1332,
+    "name": "Castos AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1333,
+    "name": "ChatPulse",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1341,
+    "name": "Core42 Jais",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1346,
+    "name": "Databricks Mosaic AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1347,
+    "name": "DataCamp AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1351,
+    "name": "Defog Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1352,
+    "name": "Dialpad GPT",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1364,
+    "name": "FairAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1365,
+    "name": "Fal Video",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1369,
+    "name": "FinChat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1373,
+    "name": "Flux Playground",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1375,
+    "name": "Forethought Solve",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1377,
+    "name": "FullStory AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1378,
+    "name": "Giskard QA Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1380,
+    "name": "Glean Enterprise",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1381,
+    "name": "GoSearch AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1384,
+    "name": "Groq Console Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1385,
+    "name": "Guru Knowledge AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1389,
+    "name": "Heuristica AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1397,
+    "name": "ImageKit AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1400,
+    "name": "Inkeep Docs AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1410,
+    "name": "Leonardo Motion",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1411,
+    "name": "Lexica Art",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1419,
+    "name": "Mason AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1427,
+    "name": "Му AI Video",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1432,
+    "name": "NextDiffusion",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1436,
+    "name": "Normalyze AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1438,
+    "name": "Nuance Dragon",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1448,
+    "name": "Papercups IO",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1453,
+    "name": "Peek AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1457,
+    "name": "Perfeed AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1465,
+    "name": "PlayHT Voice Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1467,
+    "name": "Pliny Prompts",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1473,
+    "name": "Prosa AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1476,
+    "name": "Qawker AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1488,
+    "name": "Remedee AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1492,
+    "name": "Resemble Clone",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1495,
+    "name": "Revo Video AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1503,
+    "name": "RunPod GPU Pods Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1507,
+    "name": "Scale Rapid",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1510,
+    "name": "Scribble Diffusion",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1517,
+    "name": "Sidekick AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1518,
+    "name": "Simular AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1522,
+    "name": "Slay AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1524,
+    "name": "Smash AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1534,
+    "name": "StoryProtocol",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1539,
+    "name": "Swag AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1548,
+    "name": "Thinkific AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1551,
+    "name": "Tome Story App",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1555,
+    "name": "Tune AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1557,
+    "name": "Tutoring AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1560,
+    "name": "TypingMind Enterprise",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1562,
+    "name": "Unify Router",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1565,
+    "name": "Vanna Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1566,
+    "name": "Vary AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1567,
+    "name": "Veed Video Editor",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1568,
+    "name": "Vega AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1569,
+    "name": "Vellum Workflow",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1571,
+    "name": "Visme AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1572,
+    "name": "Visual Electric",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1573,
+    "name": "Voiceflow Dialog",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1575,
+    "name": "VoxWave AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1576,
+    "name": "Wave Video AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1578,
+    "name": "Whisper WebGPU",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1579,
+    "name": "Whoosh AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1580,
+    "name": "Winno AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1581,
+    "name": "Wiseone AI",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1593,
+    "name": "Zeeland AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1597,
+    "name": "Zuro AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1598,
+    "name": "Zyho AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1603,
+    "name": "Cerebras Inference Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1604,
+    "name": "Mistral Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1605,
+    "name": "Vibe Code (Mistral)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1611,
+    "name": "Voyage Multimodal",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1620,
+    "name": "Text Generation WebUI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1626,
+    "name": "Quivr",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1629,
+    "name": "NextChat (ChatGPT-Next-Web)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1635,
+    "name": "Phind AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1636,
+    "name": "Genspark Super Search",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1638,
+    "name": "Metaphor (Exa API)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1652,
+    "name": "Unstructured Serverless",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1660,
+    "name": "Vellum Prompt Sandbox",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1664,
+    "name": "Helicone Observability",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1665,
+    "name": "OpenInference",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1670,
+    "name": "BentoCloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1671,
+    "name": "DeepSpeed-MII",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1672,
+    "name": "Axolotl",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1673,
+    "name": "Mesop",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1678,
+    "name": "Llama Guard",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1680,
+    "name": "Rebuff AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1682,
+    "name": "Arthur Shield",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1684,
+    "name": "Censius AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1689,
+    "name": "Anonymer AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1690,
+    "name": "Robust Intelligence (Cisco)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1693,
+    "name": "Modzy AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1695,
+    "name": "Seldon Core",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1700,
+    "name": "DeepPavlov Dream",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1701,
+    "name": "Open-Assistant",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1702,
+    "name": "Mentat AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1703,
+    "name": "Plandex AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1705,
+    "name": "Aide AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1710,
+    "name": "MutableAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1721,
+    "name": "Wolfram Plugin for LLMs",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1722,
+    "name": "Dataherald",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1758,
+    "name": "Clarifai Community",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1759,
+    "name": "Peltarion",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1764,
+    "name": "Cnvrg.io",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1766,
+    "name": "Seldon Deploy",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1771,
+    "name": "DeepEval Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1772,
+    "name": "Censius AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1773,
+    "name": "Amundsen Lyft",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1775,
+    "name": "Weights & Biases Core",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1776,
+    "name": "AimStack Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1778,
+    "name": "Scale Rapid AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1779,
+    "name": "Confident AI Pro",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1780,
+    "name": "Aporia Guardrails",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1781,
+    "name": "Patronus AI API",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1782,
+    "name": "Galileo Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1793,
+    "name": "Riverside Transcriber",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1818,
+    "name": "Gaudio Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1819,
+    "name": "Weights.gg",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1821,
+    "name": "InvokeAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1827,
+    "name": "StrongSORT",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1832,
+    "name": "LFW Face Dataset",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1834,
+    "name": "Pascal VOC Dataset",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1835,
+    "name": "ADE20K Dataset",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1838,
+    "name": "Kinetics Dataset",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1840,
+    "name": "HMDB51",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1842,
+    "name": "Charades Dataset",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1843,
+    "name": "Something-Something",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1846,
+    "name": "Matterport3D",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1857,
+    "name": "PyBullet",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1863,
+    "name": "CleanRL",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1870,
+    "name": "DexArt",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1873,
+    "name": "SayCan (Google)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1877,
+    "name": "PettingZoo Classic",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1884,
+    "name": "ProGen",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1886,
+    "name": "ChemBERTa",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1902,
+    "name": "Claude Code",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1905,
+    "name": "Dynatrace Davis AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1906,
+    "name": "New Relic Grok",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1910,
+    "name": "MutableAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1912,
+    "name": "Mentat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1913,
+    "name": "Plandex",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1917,
+    "name": "DeepCode AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1926,
+    "name": "Robust Intelligence",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1963,
+    "name": "Phind Pro",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1975,
+    "name": "Text Generation WebUI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1977,
+    "name": "Chatbot UI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1979,
+    "name": "MacGPT",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 1983,
+    "name": "Fathom AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2004,
+    "name": "Pecan Predictive",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2010,
+    "name": "Outerbase",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2025,
+    "name": "Height AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2040,
+    "name": "Obviously Feedback",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2041,
+    "name": "Notably AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2045,
+    "name": "Mermaid Chart AI",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2048,
+    "name": "Flyway AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2067,
+    "name": "Bruin Data",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2074,
+    "name": "Lepton Workspace",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2076,
+    "name": "Baseten Chain",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2078,
+    "name": "OctoStack",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2079,
+    "name": "Novita Sandbox",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2080,
+    "name": "Hyperbolic GPU",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2083,
+    "name": "Eden AI Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2085,
+    "name": "LiteLLM Proxy",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2087,
+    "name": "Requesty Route",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2100,
+    "name": "Lambda GPU Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2101,
+    "name": "CoreWeave Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2103,
+    "name": "Scaleway AI Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2104,
+    "name": "OVH Public Cloud AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2105,
+    "name": "Monster Deploy",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2107,
+    "name": "Inference Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2109,
+    "name": "TextSynth API",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2110,
+    "name": "BentoML Yatai",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2112,
+    "name": "Clarifai Portal",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2113,
+    "name": "Lamini Enterprise",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2115,
+    "name": "Kilo Router",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2116,
+    "name": "Flaex Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2132,
+    "name": "Langfuse Tracing",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2133,
+    "name": "Comet LLMOps",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2137,
+    "name": "LMSYS Chatbot Arena",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2138,
+    "name": "OpenPipe FineTune",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2140,
+    "name": "TensorDock Marketplace",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2145,
+    "name": "Mystic Pipeline",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2149,
+    "name": "Fly.io Machines",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2158,
+    "name": "Phind Developer",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2166,
+    "name": "Aporia AI Guard",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2169,
+    "name": "Redis Vector Search",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2179,
+    "name": "Transformers.js",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2180,
+    "name": "Core ML Tools",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2184,
+    "name": "Axolotl Finetuning",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2186,
+    "name": "ChatDev Virtual",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2188,
+    "name": "Devin AI Cognition",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2189,
+    "name": "Mentat Coding",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2190,
+    "name": "Plandex AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2191,
+    "name": "Bloop AI Code",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2193,
+    "name": "StarCoder BigCode",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2195,
+    "name": "Mesop Google",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2204,
+    "name": "Daily Bots",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2206,
+    "name": "PlayHT Voice",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2297,
+    "name": "Fastgen",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2302,
+    "name": "Superblocks",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2319,
+    "name": "MutableAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2320,
+    "name": "Copilot Workspace",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2321,
+    "name": "Llama Guard",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2322,
+    "name": "OSWorld",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2323,
+    "name": "Mentat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2325,
+    "name": "Claude Engineer",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2326,
+    "name": "Text Generation WebUI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2331,
+    "name": "Lepton Workspaces",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2332,
+    "name": "Baseten Model Zoo",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2335,
+    "name": "Nebius Studio Models",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2336,
+    "name": "Hyperbolic Platform",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2338,
+    "name": "Predibase LoRA Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2339,
+    "name": "TensorDock Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2340,
+    "name": "Brev Dev Launchpad",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2341,
+    "name": "Lambda GPU Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2342,
+    "name": "CoreWeave Cloud Platform",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2343,
+    "name": "Scaleway AI Endpoints",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2347,
+    "name": "DIT Platform",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2349,
+    "name": "Requesty Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2350,
+    "name": "Helicone AI Portal",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2351,
+    "name": "Martian Router",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2352,
+    "name": "Unify AI Routing",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2353,
+    "name": "Vellum Prompt Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2354,
+    "name": "Promptlayer Dashboard",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2355,
+    "name": "Humanloop Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2357,
+    "name": "Arize Phoenix Tracing",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2358,
+    "name": "Comet LLMOps",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2359,
+    "name": "Nebuly User Analytics",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2360,
+    "name": "OpenPipe FineTune",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2362,
+    "name": "PydanticAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2366,
+    "name": "Robust Intelligence",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2367,
+    "name": "Aporia",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2368,
+    "name": "LlamaParse",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2370,
+    "name": "Kreuzberg",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2374,
+    "name": "Sensei AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2375,
+    "name": "Builder.io AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2377,
+    "name": "Dora AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2378,
+    "name": "Tome AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2383,
+    "name": "Genspark Autopilot",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2392,
+    "name": "Fathom AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2393,
+    "name": "Dialpad AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2395,
+    "name": "Clari Copilot",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2396,
+    "name": "Salesloft Rhythm",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2403,
+    "name": "Riverside.fm",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2407,
+    "name": "PlayHT",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2409,
+    "name": "LOVO (Genny)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2416,
+    "name": "Veed.io AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2418,
+    "name": "ElevenLabs Reader",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2420,
+    "name": "Crushon AI",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2423,
+    "name": "Phind",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2438,
+    "name": "OmniRoute",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2440,
+    "name": "Mistral Le Chat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2441,
+    "name": "GitHub Spark",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2442,
+    "name": "Melty",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2444,
+    "name": "Mentat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2446,
+    "name": "Phind Search",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2447,
+    "name": "MutableAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2448,
+    "name": "CodeSee",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2449,
+    "name": "DeepCode AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2450,
+    "name": "GitKraken AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2452,
+    "name": "OpenHands",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2454,
+    "name": "HackerRank AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2462,
+    "name": "CodeX by OpenAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2470,
+    "name": "Phind CodeLlama",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2471,
+    "name": "Dolphin AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2474,
+    "name": "OpenBMB",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2483,
+    "name": "OpenAssistant",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2486,
+    "name": "Chatbot UI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2487,
+    "name": "Bolt Chat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2489,
+    "name": "LLM Guard",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2496,
+    "name": "Lexica Aperture",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2503,
+    "name": "CosyVoice",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2504,
+    "name": "SenseVoice",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2506,
+    "name": "PlayHT",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2508,
+    "name": "Lovo.ai (Genny)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2510,
+    "name": "Riverside.fm AI",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2512,
+    "name": "Fathom AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2513,
+    "name": "Coral AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2514,
+    "name": "AIHelperBot",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2516,
+    "name": "Outerbase",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2521,
+    "name": "XMind Copilot",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2524,
+    "name": "Mermaid Chart",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2525,
+    "name": "Tome AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2527,
+    "name": "NanoGPT",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2528,
+    "name": "DigitalOcean GenAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2539,
+    "name": "Chroma Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2543,
+    "name": "Text Generation WebUI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2544,
+    "name": "Quivr",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2545,
+    "name": "Chonkie",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2546,
+    "name": "Play.ht API",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2549,
+    "name": "Fathom Video AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2550,
+    "name": "Riverside.fm",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2551,
+    "name": "HeyGen API",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2552,
+    "name": "Synthesia API",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2554,
+    "name": "Tavus API",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2555,
+    "name": "Hour One",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2561,
+    "name": "Upscayl",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2562,
+    "name": "Mentat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2563,
+    "name": "Plandex",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2565,
+    "name": "Diagram (Genius)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2567,
+    "name": "Phind",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2568,
+    "name": "Melty",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2570,
+    "name": "Fig (Amazon Q CLI)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2575,
+    "name": "Docker GenAI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2578,
+    "name": "Kaggle Models",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2622,
+    "name": "OmniGen",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2623,
+    "name": "EchoMimic",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2624,
+    "name": "ChatMusician",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2625,
+    "name": "DiffSynth Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2626,
+    "name": "MegaTTS",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2627,
+    "name": "VITA Audio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2628,
+    "name": "YuE Music",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2629,
+    "name": "CosyVoice Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2630,
+    "name": "DSPy Core",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2631,
+    "name": "AgentOps Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2632,
+    "name": "Distilabel AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2633,
+    "name": "LazyGraphRAG",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2634,
+    "name": "AutoRAG Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2635,
+    "name": "Unsloth Training",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2636,
+    "name": "DeepSpeed MoE",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2637,
+    "name": "Megatron Core",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2638,
+    "name": "Outlines Dev",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2639,
+    "name": "Guidance Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2640,
+    "name": "Jsonformer Tool",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2641,
+    "name": "Pydantic AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2642,
+    "name": "FastGPT Hub",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2643,
+    "name": "RagFlow Platform",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2644,
+    "name": "Chroma Core",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2645,
+    "name": "Marqo Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2646,
+    "name": "Vespa Platform",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2647,
+    "name": "Typesense AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2648,
+    "name": "Argilla Platform",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2649,
+    "name": "FastSpeech Audio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2660,
+    "name": "V-Express Face",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2666,
+    "name": "Google Antigravity",
+    "current_url": "[link removed]",
+    "status": ""
+  },
+  {
+    "row": 2668,
+    "name": "Google Stitch",
+    "current_url": "[link removed]",
+    "status": ""
+  },
+  {
+    "row": 2669,
+    "name": "Google Whisk",
+    "current_url": "[link removed]",
+    "status": ""
+  },
+  {
+    "row": 2670,
+    "name": "Google Pomelli",
+    "current_url": "[link removed]",
+    "status": ""
+  },
+  {
+    "row": 2671,
+    "name": "Gemini CLI",
+    "current_url": "[link removed]",
+    "status": ""
+  },
+  {
+    "row": 2672,
+    "name": "Domo Agent Catalyst",
+    "current_url": "[link removed]",
+    "status": ""
+  },
+  {
+    "row": 2673,
+    "name": "Giskard",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2674,
+    "name": "Lunary",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2675,
+    "name": "LangGraph Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2676,
+    "name": "AgentS",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2677,
+    "name": "Perplexica",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2678,
+    "name": "PaperQA",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2679,
+    "name": "Mentat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2680,
+    "name": "Agentic",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2681,
+    "name": "PuLID",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2682,
+    "name": "MusicLM OSS",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2683,
+    "name": "Whisper-Medusa",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2684,
+    "name": "Axolotl",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2685,
+    "name": "Portkey Gateway",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2686,
+    "name": "Git-Auto",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2687,
+    "name": "Giskard QA",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2688,
+    "name": "Lunary Ops",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2689,
+    "name": "Quivr",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2690,
+    "name": "Mentat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2691,
+    "name": "Plandex",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2692,
+    "name": "Phind",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2693,
+    "name": "Tome AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2696,
+    "name": "Mermaid Chart",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2701,
+    "name": "Hour One",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2704,
+    "name": "Canva Magic Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2708,
+    "name": "Lexica Art",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2712,
+    "name": "CSM (Common Sense Machines)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2715,
+    "name": "3DFY.ai",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2719,
+    "name": "Musicfy",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2721,
+    "name": "Riverside.fm AI",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2727,
+    "name": "Fathom AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2730,
+    "name": "Equalum AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2732,
+    "name": "CrewAI Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2733,
+    "name": "Aporia AI Guardrails",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2734,
+    "name": "Robust Intelligence",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2735,
+    "name": "Censius",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2736,
+    "name": "Aporia Monitoring",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2737,
+    "name": "Modelbit",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2738,
+    "name": "BentoML Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2739,
+    "name": "AutoGPT Platform",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2740,
+    "name": "Cognosys AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2742,
+    "name": "Induced AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2744,
+    "name": "Mendable Ingestion",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2746,
+    "name": "VisualWebArena",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2747,
+    "name": "AppAgent",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2748,
+    "name": "Perplexica",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2749,
+    "name": "Farfalle",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2752,
+    "name": "Edge Copilot",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2755,
+    "name": "Softr AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2759,
+    "name": "Dora AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2761,
+    "name": "Squarespace AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2765,
+    "name": "Landingi AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2767,
+    "name": "Instapage AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2772,
+    "name": "Crushon AI",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2775,
+    "name": "YouChat",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2776,
+    "name": "Le Chat (Mistral)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2783,
+    "name": "RunPod Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2784,
+    "name": "Lambda GPU Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2785,
+    "name": "CoreWeave Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2790,
+    "name": "Brev Cloud Dev",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2791,
+    "name": "Saturn Cloud Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2792,
+    "name": "Baseten Deploy",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2793,
+    "name": "Cerebrium Serverless",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2794,
+    "name": "Beam Serverless AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2795,
+    "name": "Mystic Pipeline",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2797,
+    "name": "OctoAI Endpoints",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2800,
+    "name": "SambaNova SN40L",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2801,
+    "name": "Hyperbolic Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2802,
+    "name": "Novita AI Serverless",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2803,
+    "name": "OpenRouter Keys",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2804,
+    "name": "Portkey Gateway",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2806,
+    "name": "Requesty Router",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2807,
+    "name": "Unify AI Router",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2808,
+    "name": "Martian Model Router",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2809,
+    "name": "RouteLLM LMSYS",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2810,
+    "name": "Helicone Observability",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2813,
+    "name": "Humanloop Studio",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2814,
+    "name": "Promptlayer App",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2815,
+    "name": "Pinecone Serverless",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2816,
+    "name": "Chroma DB Cloud",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2818,
+    "name": "Dgraph AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2822,
+    "name": "Upstash Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2823,
+    "name": "OpenSearch Vector Engine",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2830,
+    "name": "Nuance Dragon",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2841,
+    "name": "ElevenLabs Reader",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2843,
+    "name": "LOVO AI (Genny)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2845,
+    "name": "Claude Code",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2846,
+    "name": "Mutable AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2848,
+    "name": "Cognition Devin",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2850,
+    "name": "Dora AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2851,
+    "name": "Squarespace Blueprint",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2857,
+    "name": "Builder.io Visual Copilot",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2860,
+    "name": "Postman AI Assistant",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2864,
+    "name": "Stainless API",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2867,
+    "name": "Supabase AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2870,
+    "name": "BigQuery ML",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2871,
+    "name": "Redshift ML",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2874,
+    "name": "Mesop",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2875,
+    "name": "FastRTC",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2880,
+    "name": "PlayHT",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2881,
+    "name": "Sonantic (Spotify)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2882,
+    "name": "Riverside.fm AI",
+    "current_url": "[suspicious link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2891,
+    "name": "Hour One",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2894,
+    "name": "CyberLink PowerDirector AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2896,
+    "name": "Seldon Core",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2899,
+    "name": "Quivr",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2900,
+    "name": "Llama Guard",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2901,
+    "name": "Robust Intelligence (Cisco)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2906,
+    "name": "OpenSearch Neural",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2908,
+    "name": "Aerospike Vector",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2913,
+    "name": "Voyage AI Multimodal",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2920,
+    "name": "Together Embeddings",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2921,
+    "name": "Fireworks Embeddings",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2923,
+    "name": "Upstage Document AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2924,
+    "name": "DocLLM",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2938,
+    "name": "TaskUs AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2941,
+    "name": "KServe v2",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2944,
+    "name": "OpenGeospatial AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2948,
+    "name": "ChemBERTa",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2949,
+    "name": "Galactica (Papers with Code)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2955,
+    "name": "Agility Writer",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2977,
+    "name": "CrewAI Enterprise",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2978,
+    "name": "OSWorld",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2979,
+    "name": "Chatbot Arena (LMSYS)",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2984,
+    "name": "CanItRun.ai",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2985,
+    "name": "TensorRT-LLM Backend",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 2993,
+    "name": "Untether AI",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 3000,
+    "name": "Sapeon",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 3011,
+    "name": "Innatera",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 3013,
+    "name": "Grai Matter Labs",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 3014,
+    "name": "Horizon Robotics",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 3015,
+    "name": "Black Sesame Technologies",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 3016,
+    "name": "Motivis",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 3019,
+    "name": "Ghost Autonomy",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 3029,
+    "name": "Embark Trucks",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  },
+  {
+    "row": 3030,
+    "name": "TuSimple",
+    "current_url": "[link removed]",
+    "status": "⏳ لم يتم الفحص"
+  }
+]

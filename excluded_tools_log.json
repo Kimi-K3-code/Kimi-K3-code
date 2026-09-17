@@ -1,0 +1,509 @@
+{
+  "timestamp": "2026-09-17T20:42:41.382919",
+  "summary": {
+    "total_removed_from_sheet1_desktop_ides": 6,
+    "total_excluded_from_gist": 61,
+    "total_added_to_sheet1": 3,
+    "total_added_to_github_sheet": 12
+  },
+  "sheet1_removed_desktop_ides": [
+    {
+      "row": 200,
+      "name": "Cursor",
+      "url": "https://www.cursor.com/",
+      "reason": "محرر IDE مكتبي للابتوب فقط (Cursor Desktop IDE) — بدون واجهة شات/ويب للموبايل"
+    },
+    {
+      "row": 201,
+      "name": "Windsurf (Codeium)",
+      "url": "https://codeium.com/windsurf",
+      "reason": "محرر IDE مكتبي للابتوب فقط (Windsurf Desktop IDE) — بدون واجهة شات/ويب للموبايل"
+    },
+    {
+      "row": 465,
+      "name": "Void Editor",
+      "url": "https://voideditor.com/",
+      "reason": "محرر IDE مكتبي للابتوب فقط (Void Editor Desktop IDE) — بدون واجهة شات/ويب للموبايل"
+    },
+    {
+      "row": 843,
+      "name": "Google Antigravity",
+      "url": "https://antigravity.google/",
+      "reason": "محرر IDE مكتبي للابتوب فقط (Google Antigravity Desktop IDE) — بدون واجهة شات/ويب للموبايل"
+    },
+    {
+      "row": 848,
+      "name": "Trae",
+      "url": "https://www.trae.ai/",
+      "reason": "محرر IDE مكتبي للابتوب فقط (Trae Desktop IDE) — بدون واجهة شات/ويب للموبايل"
+    },
+    {
+      "row": 2652,
+      "name": "Google Antigravity",
+      "url": "https://googleantigravity.ai",
+      "reason": "محرر IDE مكتبي للابتوب فقط (Google Antigravity Desktop IDE) — بدون واجهة شات/ويب للموبايل"
+    }
+  ],
+  "gist_excluded_tools": [
+    {
+      "name": "SWE-bench",
+      "category": "Duplicate GitHub Repo",
+      "reason": "مستودع جيت هاب مكرر ومسجل مسبقاً (SWE-bench)",
+      "source": "Table 2"
+    },
+    {
+      "name": "SWE-bench Verified",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (نفس المستودع)",
+      "source": "Table 2"
+    },
+    {
+      "name": "SWE-bench Multimodal",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (نفس المستودع)",
+      "source": "Table 2"
+    },
+    {
+      "name": "SWE-bench-Live",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (arXiv:2505.23419)",
+      "source": "Table 2"
+    },
+    {
+      "name": "SWE-Bench+",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (arXiv:2410.06992)",
+      "source": "Table 2"
+    },
+    {
+      "name": "SWE-rebench",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (arXiv:2505.20411)",
+      "source": "Table 2"
+    },
+    {
+      "name": "SWE-smith",
+      "category": "Already in Sheet 1",
+      "reason": "الأداة مسجلة مسبقاً في الورقة 1 باسم [SWE-smith]",
+      "source": "Table 2"
+    },
+    {
+      "name": "AutoCodeRover",
+      "category": "Duplicate GitHub Repo",
+      "reason": "مستودع جيت هاب مكرر ومسجل مسبقاً (AutoCodeRover)",
+      "source": "Table 2"
+    },
+    {
+      "name": "Agentless",
+      "category": "Duplicate GitHub Repo",
+      "reason": "مستودع جيت هاب مكرر ومسجل مسبقاً (Agentless)",
+      "source": "Table 2"
+    },
+    {
+      "name": "Moatless Tools / SWE-Search",
+      "category": "Research Paper/Benchmark",
+      "reason": "تنويعة بحثية أكاديمية أو معيار تقييم (https://github.com/aorwall/moatless-tools)",
+      "source": "Table 2"
+    },
+    {
+      "name": "Temporal",
+      "category": "Duplicate Web URL",
+      "reason": "دومين المنصة مسجل مسبقاً في الورقة 1 تحت [Temporal.io] (https://docs.temporal.io)",
+      "source": "Table 2"
+    },
+    {
+      "name": "Restate",
+      "category": "Duplicate Web URL",
+      "reason": "دومين المنصة مسجل مسبقاً في الورقة 1 تحت [Restate Cloud] (https://docs.restate.dev)",
+      "source": "Table 2"
+    },
+    {
+      "name": "Inngest",
+      "category": "Already in Sheet 1",
+      "reason": "مسجل مسبقاً في الورقة 1 باسم [Inngest]",
+      "source": "Table 2"
+    },
+    {
+      "name": "Mastra",
+      "category": "Already in Sheet 1",
+      "reason": "الأداة مسجلة مسبقاً في الورقة 1 باسم [Mastra]",
+      "source": "Table 2"
+    },
+    {
+      "name": "Microsoft Agent Framework / Semantic Kernel",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://learn.microsoft.com + GitHub)",
+      "source": "Table 2"
+    },
+    {
+      "name": "MCP (Model Context Protocol)",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://modelcontextprotocol.io/specification/2025-06-18)",
+      "source": "Table 2"
+    },
+    {
+      "name": "A2A (Agent2Agent)",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://a2a-protocol.org/latest/specification/)",
+      "source": "Table 2"
+    },
+    {
+      "name": "LiteLLM Router",
+      "category": "Duplicate Web URL",
+      "reason": "دومين المنصة مسجل مسبقاً في الورقة 1 تحت [LiteLLM Proxy] (https://docs.litellm.ai/docs/routing)",
+      "source": "Table 2"
+    },
+    {
+      "name": "bolt.diy",
+      "category": "Duplicate GitHub Repo",
+      "reason": "مستودع جيت هاب مكرر ومسجل مسبقاً (Bolt.diy)",
+      "source": "Table 2"
+    },
+    {
+      "name": "Dyad",
+      "category": "Duplicate GitHub Repo",
+      "reason": "مستودع جيت هاب مكرر ومسجل مسبقاً (Dyad)",
+      "source": "Table 2"
+    },
+    {
+      "name": "METR — أفق المهام الطويلة",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (arXiv:2503.14499 + metr.org/blog/2025-03-19-...)",
+      "source": "Table 2"
+    },
+    {
+      "name": "The SWE-Bench Illusion",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (arXiv:2506.12286)",
+      "source": "Table 2"
+    },
+    {
+      "name": "SLSA Provenance",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://slsa.dev/spec/v1.0/provenance)",
+      "source": "Table 2"
+    },
+    {
+      "name": "in-toto / Sigstore / Rekor",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://in-toto.io)",
+      "source": "Table 2"
+    },
+    {
+      "name": "CycloneDX / SPDX",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://cyclonedx.org)",
+      "source": "Table 2"
+    },
+    {
+      "name": "OpenTelemetry GenAI SemConv",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://opentelemetry.io/docs/specs/semconv/gen-ai/)",
+      "source": "Table 2"
+    },
+    {
+      "name": "SWE-bench paper",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (https://arxiv.org/abs/2310.06770)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "SWE-bench Goes Live",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (https://arxiv.org/abs/2505.23419)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Moatless Tools",
+      "category": "Duplicate GitHub Repo",
+      "reason": "مستودع جيت هاب مكرر ومسجل مسبقاً (moatless-tools)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "SWE-Search",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (https://arxiv.org/abs/2410.20285)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Temporal Workflows",
+      "category": "Documentation/Subset",
+      "reason": "توثيق فرعي أو مجموعة فرعية لنفس المستودع (https://docs.temporal.io/workflows)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Temporal Versioning",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://docs.temporal.io/develop/python/workflows/versioning)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Restate Durable Steps",
+      "category": "Documentation/Subset",
+      "reason": "توثيق فرعي أو مجموعة فرعية لنفس المستودع (https://docs.restate.dev/develop/ts/durable-steps)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Restate Request Lifecycle",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://docs.restate.dev/guides/request-lifecycle)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "DBOS Architecture",
+      "category": "Documentation/Subset",
+      "reason": "توثيق فرعي أو مجموعة فرعية لنفس المستودع (https://docs.dbos.dev/architecture)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "DBOS vs Temporal",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://docs.dbos.dev/explanations/comparing-temporal)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Inngest Steps",
+      "category": "Documentation/Subset",
+      "reason": "توثيق فرعي أو مجموعة فرعية لنفس المستودع (https://www.inngest.com/docs/learn/inngest-steps)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Inngest Checkpointing",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://www.inngest.com/docs/setup/checkpointing)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "ADK Workflow Agents",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://github.com/google/adk-docs)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "ADK Architecture Overview",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://github.com/google/adk-python)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "AWS Strands SDK",
+      "category": "Duplicate URL in Gist",
+      "reason": "رابط مكرر داخل نفس ملف الجيست (https://github.com/strands-agents/sdk-python)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Strands Swarm",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://strandsagents.com/docs/user-guide/concepts/multi-agent/swarm/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Strands Session Management",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://strandsagents.com/docs/user-guide/concepts/session-management/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Strands Observability",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://strandsagents.com/docs/user-guide/observability/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "MCP Spec",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://modelcontextprotocol.io/specification/2025-06-18)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "MCP Security Best Practices",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "A2A Specification",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://a2a-protocol.org/latest/specification/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "anthropics/sandbox-runtime",
+      "category": "Duplicate in Gist",
+      "reason": "تكرار داخل نفس ملف الجيست",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Kubernetes Agent Sandbox",
+      "category": "Duplicate URL in Gist",
+      "reason": "رابط مكرر داخل نفس ملف الجيست (https://github.com/kubernetes-sigs/agent-sandbox)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Agent Sandbox Docs",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://agent-sandbox.sigs.k8s.io/docs/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "LiteLLM Routing",
+      "category": "Documentation/Subset",
+      "reason": "توثيق فرعي أو مجموعة فرعية لنفس المستودع (https://docs.litellm.ai/docs/routing)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Suna sandbox path",
+      "category": "Sub-doc/Variant",
+      "reason": "توثيق فرعي أو تنويعة مسجلة بالفعل للمشروع (https://github.com/kortix-ai/suna)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "METR paper",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (https://arxiv.org/abs/2503.14499)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "METR blog",
+      "category": "Blog/Article Only",
+      "reason": "مقال تحليلي/شرح تقني وليس أداة أو منصة برمجية مستقلة (https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "SWE-Bench Illusion",
+      "category": "Research Paper Only",
+      "reason": "ورقة بحثية أكاديمية وليست أداة أو منصة برمجية تنفيذية (https://arxiv.org/abs/2506.12286)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "in-toto",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://in-toto.io/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Sigstore Docs",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://docs.sigstore.dev/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "CycloneDX",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://cyclonedx.org/specification/overview/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "SPDX",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://spdx.dev/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "OTel GenAI SemConv",
+      "category": "Standard/Protocol Spec",
+      "reason": "مواصفة ومعيار أمان أو بروتوكول قياسي (https://opentelemetry.io/docs/specs/semconv/gen-ai/)",
+      "source": "Appendix 11.1"
+    },
+    {
+      "name": "Open Policy Agent",
+      "category": "Documentation/Subset",
+      "reason": "توثيق فرعي أو مجموعة فرعية لنفس المستودع (https://www.openpolicyagent.org/)",
+      "source": "Appendix 11.1"
+    }
+  ],
+  "gist_added_sheet1": [
+    {
+      "name": "DBOS Transact",
+      "url": "https://www.dbos.dev/",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "مكتبة وقاعدة تنفيذ متين بتعتمد على PostgreSQL لضمان استئناف خطوات الوكلاء ومسارات العمل بدون فقدان لأي خطوة. [تصنيفات: تنفيذ متين واستئناف]"
+    },
+    {
+      "name": "OPA / Rego",
+      "url": "https://www.openpolicyagent.org/",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "المحرك القياسي المفتوح لتقييم وفرض السياسات ككود (Policy-as-Code) لضبط أمان وصلاحيات التطبيقات السحابية والوكلاء. [تصنيفات: محرك سياسات وأمان]"
+    },
+    {
+      "name": "AWS Cedar",
+      "url": "https://www.cedarpolicy.com/",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "لغة ومحرك سياسات وتصاريح متقدم من أمازون بيحدد ويفصل بدقة صلاحيات وأذونات وكلاء الذكاء الاصطناعي بأعلى معايير الأمان. [تصنيفات: سياسات وصلاحيات]"
+    }
+  ],
+  "gist_added_github": [
+    {
+      "name": "Google ADK",
+      "url": "https://github.com/google/adk-python",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "إطار عمل رسمي ومفتوح من جوجل لبناء وتنسيق وكلاء الذكاء الاصطناعي بدقة وتقييم أداء الخطوات خطوة بخطوة. [تصنيفات: إطار عمل وكلاء]"
+    },
+    {
+      "name": "AWS Strands Agents",
+      "url": "https://github.com/strands-agents/sdk-python",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "مكتبة وأدوات مفتوحة من أمازون لبناء وكلاء ذكاء اصطناعي مرنين بيتعاملوا كأسراب (Swarm) مع تتبع كامل للعمليات. [تصنيفات: إطار عمل وكلاء]"
+    },
+    {
+      "name": "Dapr Agents",
+      "url": "https://github.com/dapr/dapr-agents",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "إطار عمل قوي لبناء وكلاء ذكاء اصطناعي موزعين بيعتمد على نمط الممثلين (Actors) وحفظ الحالة ومسارات العمل المتينة. [تصنيفات: إطار عمل وكلاء]"
+    },
+    {
+      "name": "anthropics/sandbox-runtime",
+      "url": "https://github.com/anthropics/sandbox-runtime",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "بيئة عزل أمنية فائقة وسريعة لنظام الملفات والشبكة لتشغيل أكواد الوكلاء بأمان وبدون حاجة لحاويات ثقيلة. [تصنيفات: عزل وأمان برمجي]"
+    },
+    {
+      "name": "K8s Agent Sandbox",
+      "url": "https://github.com/kubernetes-sigs/agent-sandbox",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "أداة مفتوحة المصدر لبيئات Kubernetes بتوفر عزل كامل وإدارة دورة حياة بيئات تشغيل كود وكلاء الذكاء الاصطناعي. [تصنيفات: بنية تحتية كوبرنيتس]"
+    },
+    {
+      "name": "CaMeL",
+      "url": "https://github.com/google-research/camel-prompt-injection",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "إطار أمني مفتوح المصدر لمنع هجمات واختراقات حقن الأوامر (Prompt Injection) لوكلاء الذكاء الاصطناعي عبر هندسة تدفق البيانات. [تصنيفات: بحث وكود مفتوح]"
+    },
+    {
+      "name": "Suna (Kortix)",
+      "url": "https://github.com/kortix-ai/suna",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "وكيل ومساعد برمجي مستقل مفتوح المصدر بيشتغل في بيئات معزولة وبيقدم اقتراحات تعديل الكود مع طلب موافقة المطور قبل الدمج. [تصنيفات: وكيل برمجة مفتوح]"
+    },
+    {
+      "name": "E2B Fragments",
+      "url": "https://github.com/e2b-dev/fragments",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "قوالب ومكونات برمجية مفتوحة المصدر لتوليد وتشغيل تطبيقات الويب الكاملة داخل بيئات سحابية معزولة وآمنة. [تصنيفات: قوالب سحابية]"
+    },
+    {
+      "name": "Onlook",
+      "url": "https://github.com/onlook-dev/onlook",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "محرر ومصمم بصري مفتوح المصدر لمشاريع React بيسمح بالتعديل المباشر على الكود الفعلي مع معاينة فورية بدون ما يكسر المشروع. [تصنيفات: تصميم وتحرير كود]"
+    },
+    {
+      "name": "Wasp OpenSaaS",
+      "url": "https://github.com/wasp-lang/open-saas",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "قالب ومنصة برمجية مفتوحة المصدر بتولد تطبيقات SaaS كاملة جاهزة للإنتاج (React و Node و Postgres) في دقايق. [تصنيفات: توليد مشاريع سحابية]"
+    },
+    {
+      "name": "HumanLayer",
+      "url": "https://github.com/humanlayer/humanlayer",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "مكتبة مفتوحة المصدر لإضافة بوابات موافقة وتحكم بشري (Human-in-the-loop) للتحكم في أفعال وكلاء الذكاء الاصطناعي عبر سلاك والإيميل. [تصنيفات: تحكم وموافقة بشرية]"
+    },
+    {
+      "name": "moatless-tree-search",
+      "url": "https://github.com/aorwall/moatless-tree-search",
+      "status": "⏳ لم يتم الفحص",
+      "notes": "أدوات وبيئة هندسية مفتوحة لبناء وتقييم وكلاء البرمجة مع خوارزميات بحث متقدمة وتقييم الخطوات البرمجية خطوة بخطوة. [تصنيفات: معمارية وكلاء، مستودع]"
+    }
+  ]
+}
