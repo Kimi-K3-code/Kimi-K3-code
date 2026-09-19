@@ -9,8 +9,17 @@
   3. فحص التكرارات وإحصائيات الـ KPI الحية.
   4. كود Google Apps Script الآلي للحركة اللحظية (Realtime onEdit Trigger).
 
-الإصدار: 1.0.0 (2026-09-17)
+الإصدار: 1.1.0 (2026-09-19)
+  ⚠️ تغييرات 1.1.0:
+   - fix_kpi_cards: معادلات الإحصائيات بقت INDIRECT("B7:B") / INDIRECT("D7:D") فما تتزحلقش
+     أبداً لما Apps Script ينقل صف للصف 7 (كانت D7:D → D8:D → D10:D ...).
+   - fix_kpi_cards بتشتغل على الورقة1 وورقة جيت هاب معاً، وبتعد "لا يعمل" و"لا تعمل".
+   - apply_dropdowns بقت تغطي الورقة1 كمان، ولحد آخر صف فعلي في الشيت (مش 2000 ثابتة).
+   - process_gist بيثبت المعادلات أوتوماتيك بعد كل تشغيل.
 """
+
+DATA_START_ROW = 7   # أول صف بيانات — ثابت واحد للمشروع كله
+KPI_ROW = 3          # صف أرقام الإحصائيات (B3:F3)
 
 import sys
 import re
@@ -303,83 +312,94 @@ def show_stats(service):
         print("  Values:  ", kpi_val.get('values', []))
     print("="*60 + "\n")
 
-def fix_kpi_cards(service):
-    """تحديث معادلات كروت الـ KPI لتكون ديناميكية مفتوحة النطاق (B7:B و D7:D) وتعد كل الصفوف لحظياً"""
-    sheet_ids = get_sheet_ids(service)
-    gh_title = next((k for k in sheet_ids.keys() if 'جيت هاب' in k or 'github' in k.lower()), 'جيت هاب  Github')
-    
-    kpi_formulas = [
-        [
-            '=COUNTA(B7:B)',
-            '=COUNTIF(D7:D, "*يعمل بنجاح*")',
-            '=COUNTIF(D7:D, "*قيد التجربة*")',
-            '=COUNTIF(D7:D, "*لا تعمل*")',
-            '=COUNTIF(D7:D, "*لم يتم الفحص*")'
-        ]
+def get_kpi_formulas():
+    """معادلات كروت الـ KPI بـ INDIRECT — نص ثابت مستحيل جوجل يزحلقه مع إدراج/نقل الصفوف"""
+    d = f'INDIRECT("D{DATA_START_ROW}:D")'
+    b = f'INDIRECT("B{DATA_START_ROW}:B")'
+    return [
+        f'=COUNTA({b})',
+        f'=COUNTIF({d},"*يعمل بنجاح*")',
+        f'=COUNTIF({d},"*قيد التجربة*")',
+        f'=COUNTIF({d},"*لا يعمل*")+COUNTIF({d},"*لا تعمل*")',
+        f'=COUNTIF({d},"*لم يتم الفحص*")',
     ]
-    service.spreadsheets().values().update(
+
+def get_radar_sheet_titles(sheet_ids):
+    """أسماء الأوراق اللي عليها كروت إحصائيات: الورقة1 + ورقة جيت هاب"""
+    titles = []
+    for k in sheet_ids.keys():
+        compact = k.replace(' ', '')
+        if compact in ('الورقة1', 'ورقة1') or 'جيت هاب' in k or 'github' in k.lower():
+            titles.append(k)
+    return titles
+
+def fix_kpi_cards(service, quiet=False):
+    """تثبيت معادلات كروت الـ KPI (B3:F3) بـ INDIRECT في الورقة1 وورقة جيت هاب"""
+    sheet_ids = get_sheet_ids(service)
+    titles = get_radar_sheet_titles(sheet_ids)
+    if not titles:
+        print("⚠️ لم يتم العثور على الورقة1 أو ورقة جيت هاب.")
+        return 0
+    data = [{'range': f"'{t}'!B{KPI_ROW}:F{KPI_ROW}", 'values': [get_kpi_formulas()]} for t in titles]
+    service.spreadsheets().values().batchUpdate(
         spreadsheetId=SHEET_ID,
-        range=f"'{gh_title}'!B3:F3",
-        valueInputOption='USER_ENTERED',
-        body={'values': kpi_formulas}
+        body={'valueInputOption': 'USER_ENTERED', 'data': data}
     ).execute()
-    print("✅ تم تحديث معادلات كروت الـ KPI لتشمل النطاق المفتوح بالكامل ديناميكياً!")
+    if not quiet:
+        for t in titles:
+            print(f"✅ [{t}] تم تثبيت معادلات KPI بـ INDIRECT من الصف {DATA_START_ROW} (مش هتتزحلق تاني).")
+    return len(titles)
+
+def _dropdown_request(sheet_id, col_index, options, end_row):
+    return {
+        'setDataValidation': {
+            'range': {
+                'sheetId': sheet_id,
+                'startRowIndex': DATA_START_ROW - 1,   # الصف 7 (الفهرس يبدأ من صفر)
+                'endRowIndex': end_row,
+                'startColumnIndex': col_index,
+                'endColumnIndex': col_index + 1
+            },
+            'rule': {
+                'condition': {
+                    'type': 'ONE_OF_LIST',
+                    'values': [{'userEnteredValue': v} for v in options]
+                },
+                'showCustomUi': True,
+                'strict': False
+            }
+        }
+    }
 
 def apply_dropdowns(service):
-    """تطبيق القوائم المنسدلة (Data Validation) في ورقة جيت هاب والورقة 1"""
-    sheet_ids = get_sheet_ids(service)
+    """تطبيق القوائم المنسدلة (Data Validation) من الصف 7 لآخر صف في الورقة1 وورقة جيت هاب"""
+    spread = service.spreadsheets().get(spreadsheetId=SHEET_ID).execute()
+    info = {}
+    for sh in spread['sheets']:
+        props = sh['properties']
+        info[props['title']] = (props['sheetId'], props.get('gridProperties', {}).get('rowCount', 2000))
+
     requests = []
-    
-    # تطبيق في ورقة جيت هاب
-    if 'جيت هاب  Github' in sheet_ids:
-        gh_id = sheet_ids['جيت هاب  Github']
-        requests.extend([
-            {
-                'setDataValidation': {
-                    'range': {
-                        'sheetId': gh_id,
-                        'startRowIndex': 6,
-                        'endRowIndex': 2000,
-                        'startColumnIndex': 3,
-                        'endColumnIndex': 4
-                    },
-                    'rule': {
-                        'condition': {
-                            'type': 'ONE_OF_LIST',
-                            'values': [{'userEnteredValue': v} for v in STATUS_OPTIONS]
-                        },
-                        'showCustomUi': True,
-                        'strict': False
-                    }
-                }
-            },
-            {
-                'setDataValidation': {
-                    'range': {
-                        'sheetId': gh_id,
-                        'startRowIndex': 6,
-                        'endRowIndex': 2000,
-                        'startColumnIndex': 7,
-                        'endColumnIndex': 8
-                    },
-                    'rule': {
-                        'condition': {
-                            'type': 'ONE_OF_LIST',
-                            'values': [{'userEnteredValue': v} for v in ACTION_OPTIONS]
-                        },
-                        'showCustomUi': True,
-                        'strict': False
-                    }
-                }
-            }
-        ])
-    
+    touched = []
+    for title, (s_id, row_count) in info.items():
+        compact = title.replace(' ', '')
+        is_ws1 = compact in ('الورقة1', 'ورقة1')
+        is_gh = 'جيت هاب' in title or 'github' in title.lower()
+        if not (is_ws1 or is_gh):
+            continue
+        end_row = max(row_count, DATA_START_ROW + 1)
+        requests.append(_dropdown_request(s_id, 3, STATUS_OPTIONS, end_row))   # D = حالة الاختبار
+        requests.append(_dropdown_request(s_id, 7, ACTION_OPTIONS, end_row))   # H = الإجراء
+        touched.append(title)
+
     if requests:
         service.spreadsheets().batchUpdate(
             spreadsheetId=SHEET_ID,
             body={'requests': requests}
         ).execute()
-        print("✅ تم تفعيل وإصلاح القوائم المنسدلة (Dropdowns) في ورقة جيت هاب بنجاح 100%!")
+        print(f"✅ تم تفعيل القوائم المنسدلة من الصف {DATA_START_ROW} في: {', '.join(touched)}")
+    else:
+        print("⚠️ لم يتم العثور على أوراق مستهدفة للقوائم المنسدلة.")
 
 def move_github_from_sheet1(service, dry_run=False):
     """
@@ -548,10 +568,11 @@ def move_github_from_sheet1(service, dry_run=False):
 
 def get_apps_script_code():
     """كود جوجل أبس سكريبت التلقائي للتشغيل اللحظي فور إدخال أي رابط (النسخة الذكية المرنة)"""
-    script_path = os.path.join(CURRENT_DIR, 'onEdit_github_transfer.js')
-    if os.path.exists(script_path):
-        with open(script_path, 'r', encoding='utf-8') as f:
-            return f.read()
+    for fname in ('Code.gs', 'onEdit_github_transfer.js'):
+        script_path = os.path.join(CURRENT_DIR, fname)
+        if os.path.exists(script_path):
+            with open(script_path, 'r', encoding='utf-8') as f:
+                return f.read()
     return ""
 
 def analyze_sheet1_duplicate_urls(service):
@@ -2188,13 +2209,18 @@ def process_gist_and_update_radar(service, gist_file=None, dry_run=False):
         apply_dropdowns(service)
     except Exception as e:
         print(f"ℹ️ تم تجاوز تحديث القوائم المنسدلة نظراً لانشغال خادم جوجل شيت بالعمليات الحسابية ({e})")
+    try:
+        fix_kpi_cards(service, quiet=True)
+        print(f"📌 تم تثبيت معادلات KPI بـ INDIRECT من الصف {DATA_START_ROW}.")
+    except Exception as e:
+        print(f"ℹ️ تم تجاوز تثبيت معادلات KPI ({e})")
     print("🎉 اكتملت معالجة وتحديث رادار جوجل شيت بنجاح 100%!")
 
 def main():
     parser = argparse.ArgumentParser(description="Google Sheets Manager for AI Radar")
     parser.add_argument('--status', action='store_true', help="عرض إحصائيات الشيت الحالية")
-    parser.add_argument('--fix-kpi', action='store_true', help="تحديث كروت KPI لتكون ديناميكية مفتوحة النطاق")
-    parser.add_argument('--fix-dropdowns', action='store_true', help="تفعيل وإصلاح القوائم المنسدلة")
+    parser.add_argument('--fix-kpi', action='store_true', help="تثبيت معادلات KPI بـ INDIRECT من الصف 7 في الورقة1 وجيت هاب (ما تتزحلقش)")
+    parser.add_argument('--fix-dropdowns', action='store_true', help="تفعيل القوائم المنسدلة من الصف 7 في الورقة1 وجيت هاب")
     parser.add_argument('--move-github', action='store_true', help="نقل وحذف روابط جيت هاب من الورقة 1 إلى ورقة جيت هاب")
     parser.add_argument('--check-sheet1-dups', action='store_true', help="فحص وعرض تقرير تكرار الروابط في الورقة 1 بدون مسح")
     parser.add_argument('--clean-sheet1-dups', action='store_true', help="تنفيذ تطهير الروابط المكررة في الورقة 1")
